@@ -10,7 +10,7 @@ const withNextIntl = createNextIntlPlugin({
 
 const nextConfig: NextConfig = {
     /* config options here */
-    devIndicators: false
+    devIndicators: false,
 };
 
 export default withNextIntl(nextConfig);
