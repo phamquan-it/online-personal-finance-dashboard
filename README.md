@@ -1,84 +1,107 @@
-# Livestream Studio
+# 💰 Online Personal Finance Dashboard
 
-**Livestream Studio** is a web-based platform that allows users to create personal channels, broadcast livestreams, manage stream sessions, and interact with viewers in real-time.
-
-The project is built with [Next.js](https://nextjs.org) for the frontend, and it's easily extensible with a backend via REST APIs or WebSocket.
+A modern full-stack personal finance management tool built with **Next.js 15 (App Router)**, **Ant Design UI**, and **Flask API backend**. It helps users manage income, expenses, investments, budgets, and financial goals — all in one elegant dashboard.
 
 ---
 
-## 🚀 Getting Started
+## 🚀 Project Overview
 
-Install dependencies:
+Managing personal finances can be complicated. This web app aims to simplify financial planning by offering:
+
+- Budget tracking
+- Expense categorization
+- Investment monitoring
+- Goal progress tracking
+- Visual reports and alerts
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+
+- **Next.js 15** (App Router)
+- **React 18**
+- **Ant Design v5+**
+- **TypeScript**
+- **Zustand/Redux Toolkit** (if used)
+- **Chart.js / Recharts** for graphs
+
+### Backend
+
+- **Python 3**
+- **Flask**
+- **Flask-CORS**
+- **JWT for authentication**
+- **SQLAlchemy**
+
+### Database
+
+- **MySQL 8+** / **MariaDB**
+
+---
+
+## ✨ Features
+
+### 💸 Expense Categorization
+- Auto-categorize & customize categories
+
+### 📊 Budget Tracking
+- Set budgets, visualize progress, get alerts
+
+### 🎯 Goal Progress
+- Track savings or debt goals with progress bars
+
+### 📈 Investments
+- Monitor portfolio performance and analytics
+
+### 💰 Debt Management
+- Track and plan loan repayments
+
+### 📉 Reports
+- Exportable summaries & tax estimations
+
+### 🔔 Notifications
+- Real-time reminders for key financial events
+
+### 🔐 Security
+- Auth + encrypted sensitive data
+
+---
+
+## 📦 Project Structure
+
+/frontend (Next.js + Ant Design)
+/backend (Flask API)
+/docs (diagrams, ERD, reports)
+/sql (DB schema)
+
+
+---
+
+## 📐 Non-Functional Goals
+
+- ⚡ Fast & responsive UI
+- 🔒 Secure user sessions
+- 🌍 Cross-device support (mobile/tablet/desktop)
+- 📶 Sync across devices via API
+- ☁️ Deployable on Vercel / Render / VPS
+
+---
+
+## 🧪 Installation Guide
+
+### 🔧 Backend (Flask)
 
 ```bash
+cd backend
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+flask run
+
+## ⚙️ Frontend (Next.js + Ant Design)
+```bash
+cd frontend
 npm install
-# or
-yarn install
-```
-
-Run the development server:
-
-```bash
 npm run dev
-# or
-yarn dev
-```
-
-Open your browser at [http://localhost:3000](http://localhost:3000) to view the app.
-
----
-
-## 🔧 Project Structure
-
-- `app/`: Main pages and routes using Next.js App Router.
-- `components/`: Reusable UI components such as navigation bar, chatbox, and stream lists.
-- `lib/`: Utilities and configurations like API fetchers or client helpers.
-- `styles/`: Tailwind and custom styles.
-- `public/`: Static assets and images.
-
----
-
-## 🌟 Key Features
-
-- 🎙️ **Livestream broadcasting** using personal stream keys (OBS or similar software).
-- 🔐 **User authentication** with role-based access for streamers and viewers.
-- 🧩 **Channel management**: profile details, stream titles, visibility (public/private).
-- 💬 **Real-time chat** for viewer-streamer interaction.
-- 📺 **Stream discovery page** with filtering and categorization.
-
----
-
-## 💡 Technologies Used
-
-- **Next.js 14 (App Router)** – modern React framework with SSR support.
-- **TypeScript** – ensures type safety during development.
-- **Tailwind CSS** – fast and responsive styling.
-- **WebSocket (optional)** – real-time messaging support.
-- **REST API** – used to integrate backend systems (Laravel, NestJS, etc.).
-
----
-
-## 📂 Future Enhancements
-
-- 📊 Viewer analytics and stream performance tracking.
-- 🎨 Streamer interface customization.
-- 🔔 Notifications for followers when a new stream goes live.
-- 💾 VOD (video-on-demand) storage and playback.
-
----
-
-## 🧪 Suggested Deployment Stack
-
-- **Frontend**: Deployed on Node.js or via a reverse proxy (e.g., NGINX).
-- **Backend**: Custom RESTful API (Laravel, NestJS, etc.).
-- **Streaming server**: Use NGINX + RTMP or [Owncast](https://owncast.online/) for full self-hosted streaming.
-
----
-
-## 📬 Contributing
-
-Feedback, issues, and pull requests are always welcome. Please open an issue or contribute via a pull request.
-
----
-
-**© 2025 – Livestream Studio**
