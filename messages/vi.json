@@ -1,0 +1,331 @@
+{
+    "Error": {
+        "description": "<p>We've unfortunately encountered an error.</p><p>You can try to <retry>reload the page</retry> you were visiting.</p>",
+        "title": "Something went wrong!"
+    },
+    "IndexPage": {
+        "description": "This is a complex example that demonstrates the usage of <code>next-intl</code> with the Next.js App Router. Try changing the locale in the top right corner and see how the content changes.",
+        "title": "next-intl example"
+    },
+    "LocaleLayout": {
+        "title": "Bảng điều khiển tài chính cá nhân trực tuyến"
+    },
+    "LocaleSwitcher": {
+        "label": "Change language",
+        "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 English} other {Unknown}}"
+    },
+    "Manifest": {
+        "name": "next-intl example"
+    },
+    "Navigation": {
+        "home": "Home",
+        "pathnames": "Pathnames"
+    },
+    "NotFoundPage": {
+        "description": "Please double-check the browser address bar or use the navigation to go to a known page.",
+        "title": "Page not found"
+    },
+    "PageLayout": {
+        "links": {
+            "docs": {
+                "description": "Learn more about next-intl in the official docs.",
+                "href": "https://next-intl.dev",
+                "title": "Docs"
+            },
+            "source": {
+                "description": "Browse the source code of this example on GitHub.",
+                "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+                "title": "Source code"
+            }
+        }
+    },
+    "PathnamesPage": {
+        "description": "<p>The pathnames are internationalized too.</p><p>If you're using the default language English, you'll see <code>/en/pathnames</code> in the browser address bar on this page.</p><p>If you change the locale to German, the URL is localized accordingly (<code>/de/pfadnamen</code>).</p>",
+        "title": "Pathnames"
+    },
+    "DashboardHomePage": {
+        "title": "Tổng quan tài chính",
+        "subtitle": "Bức tranh nhanh về tình hình tài chính cá nhân của bạn, bao gồm chi tiêu, ngân sách, đầu tư và mục tiêu tài chính.",
+        "cards": {
+            "totalIncome": "Tổng thu nhập hàng tháng",
+            "totalExpense": "Tổng chi tiêu",
+            "savingsRate": "Tỷ lệ tiết kiệm",
+            "investmentAssets": "Tài sản đầu tư",
+            "spendingDistribution": "Phân bổ chi tiêu",
+            "budgetProgress": "Tiến độ ngân sách theo danh mục",
+            "savingsGoals": "Tiến độ mục tiêu tiết kiệm",
+            "debtOverview": "Tổng quan về nợ và trả nợ"
+        },
+        "debtInfo": {
+            "remainingDebt": "Nợ còn lại",
+            "repaymentPlan": "Kế hoạch trả nợ"
+        },
+        "currency": "VND",
+        "progress": {
+            "current": "Hiện tại",
+            "target": "Mục tiêu",
+            "complete": "Hoàn thành"
+        }
+    },
+    "ExpenseCategoriesPage": {
+        "title": "Danh mục Chi tiêu",
+        "addCategoryTitle": "Thêm danh mục mới",
+        "addCategorySuccess": "Thêm danh mục thành công!",
+        "addCategoryError": "Lỗi khi thêm danh mục",
+        "deleteCategorySuccess": "Xoá danh mục thành công!",
+        "deleteCategoryError": "Lỗi khi xoá danh mục",
+        "deleteConfirm": "Bạn có chắc muốn xoá?",
+        "categoryName": "Tên danh mục",
+        "categoryDescription": "Mô tả",
+        "actions": "Hành động",
+        "addButton": "Thêm",
+        "placeholderName": "Tên danh mục",
+        "placeholderDescription": "Mô tả (tuỳ chọn)",
+        "existingCategoriesTitle": "Danh sách danh mục hiện tại"
+    },
+    "BudgetPage": {
+        "title": "Ngân sách",
+        "subtitle": "Theo dõi và quản lý ngân sách chi tiêu của bạn để không vượt quá giới hạn tài chính.",
+        "addBudgetTitle": "Tạo ngân sách mới",
+        "addBudgetSuccess": "Đã thêm ngân sách!",
+        "addBudgetError": "Có lỗi khi thêm ngân sách.",
+        "deleteBudgetSuccess": "Đã xoá ngân sách thành công!",
+        "deleteBudgetError": "Lỗi khi xoá ngân sách.",
+        "budgetCategory": "Danh mục",
+        "budgetAmount": "Ngân sách",
+        "budgetSpent": "Đã chi tiêu",
+        "budgetFrequency": "Tần suất",
+        "overBudgetWarning": "Đã vượt ngân sách!",
+        "budgetWeekly": "Hàng tuần",
+        "budgetMonthly": "Hàng tháng",
+        "budgetYearly": "Hàng năm",
+        "budgetAction": "Hành động",
+        "placeholderCategory": "VD: Mua sắm, thuê nhà...",
+        "placeholderAmount": "Nhập số tiền ngân sách",
+        "placeholderSpent": "Nhập số tiền đã chi tiêu",
+        "placeholderFrequency": "Chọn tần suất",
+        "addButton": "Thêm ngân sách"
+    },
+    "GoalsPage": {
+        "title": "Mục tiêu tài chính",
+        "subtitle": "Tạo và theo dõi tiến độ tiết kiệm cho các mục tiêu ngắn và dài hạn của bạn.",
+        "addGoalTitle": "Thêm mục tiêu mới",
+        "addGoalSuccess": "Đã thêm mục tiêu!",
+        "addGoalError": "Thêm mục tiêu thất bại",
+        "goalName": "Tên mục tiêu",
+        "goalTargetAmount": "Số tiền mục tiêu",
+        "goalSavedAmount": "Đã tiết kiệm",
+        "goalDeadline": "Thời hạn",
+        "goalProgress": "Tiến độ tiết kiệm",
+        "timeLeft": "Thời gian còn lại",
+        "addButton": "Thêm mục tiêu",
+        "placeholderName": "VD: Mua xe máy, đi du lịch...",
+        "placeholderTargetAmount": "Nhập số tiền mục tiêu",
+        "placeholderSavedAmount": "Nhập số tiền đã tiết kiệm",
+        "placeholderDeadline": "Chọn thời hạn"
+    },
+    "InvestmentsPage": {
+        "title": "Theo dõi đầu tư",
+        "subtitle": "Quản lý và phân tích hiệu suất các khoản đầu tư của bạn theo thời gian.",
+        "addInvestmentTitle": "Thêm khoản đầu tư mới",
+        "addInvestmentSuccess": "Đã thêm khoản đầu tư!",
+        "addInvestmentError": "Có lỗi khi thêm khoản đầu tư.",
+        "investmentName": "Tên đầu tư",
+        "investmentType": "Loại tài sản",
+        "investmentAmount": "Giá trị đầu tư",
+        "investmentReturnRate": "Tỷ suất lợi nhuận (%)",
+        "totalPortfolio": "Tổng quan danh mục",
+        "totalValue": "Tổng giá trị",
+        "assetAllocation": "Phân bổ tài sản",
+        "investmentDetails": "Chi tiết danh mục",
+        "investmentStock": "Cổ phiếu",
+        "investmentBond": "Trái phiếu",
+        "investmentRealEstate": "Bất động sản",
+        "investmentCrypto": "Tiền mã hóa",
+        "investmentOther": "Khác",
+        "addButton": "Thêm",
+        "placeholderName": "Nhập tên khoản đầu tư",
+        "placeholderType": "Chọn loại tài sản",
+        "placeholderAmount": "Nhập giá trị đầu tư",
+        "placeholderReturnRate": "Nhập tỷ suất lợi nhuận (%)"
+    },
+    "DebtManagementPage": {
+        "title": "Quản lý Nợ",
+        "tabs": {
+            "overview": "Tổng quan",
+            "schedule": "Lịch thanh toán",
+            "plan": "Kế hoạch trả nợ",
+            "add": "Thêm khoản nợ"
+        },
+        "addDebtTitle": "Thêm khoản nợ mới",
+        "addDebtSuccess": "Đã thêm khoản nợ!",
+        "addDebtError": "Thêm khoản nợ thất bại!",
+        "debtType": "Loại khoản nợ",
+        "debtName": "Tên khoản nợ",
+        "debtTotal": "Tổng nợ",
+        "debtPaid": "Đã trả",
+        "debtRemaining": "Còn lại",
+        "debtDueDate": "Hạn trả",
+        "debtMonthlyPayment": "Trả hàng tháng",
+        "debtStartDate": "Ngày bắt đầu",
+        "debtProgress": "Tiến độ trả nợ",
+        "debtProjectedPayoff": "Dự kiến trả hết trong",
+        "paymentSchedule": "Lịch thanh toán",
+        "repaymentPlan": "Kế hoạch trả nợ",
+        "addButton": "Thêm khoản nợ",
+        "placeholderType": "VD: Thẻ tín dụng, Vay ngân hàng...",
+        "placeholderName": "Nhập tên khoản nợ",
+        "placeholderTotal": "Nhập tổng nợ",
+        "placeholderPaid": "Nhập số tiền đã trả",
+        "placeholderMonthlyPayment": "Nhập số tiền trả hàng tháng",
+        "placeholderStartDate": "Chọn ngày bắt đầu",
+        "placeholderDueDate": "Chọn hạn trả"
+    },
+    "ReportsPage": {
+        "title": "Báo cáo & Phân tích",
+        "subtitle": "Tổng hợp dữ liệu tài chính giúp bạn nắm bắt tình hình chi tiêu, thu nhập và tiết kiệm.",
+        "loadingMessage": "Đang tải dữ liệu...",
+        "errorMessage": "Không thể tải dữ liệu. Vui lòng thử lại sau.",
+        "totalIncome": "Tổng thu nhập tháng này",
+        "totalExpense": "Tổng chi tiêu tháng này",
+        "savingRate": "Tỷ lệ tiết kiệm",
+        "incomeChartTitle": "Biểu đồ thu nhập theo tháng",
+        "spendingDistributionTitle": "Phân bổ chi tiêu",
+        "tooltipIncome": "Thu nhập",
+        "tooltipExpense": "Chi tiêu",
+        "chartLegend": "Danh mục",
+        "currency": "VND"
+    },
+    "NotificationsAlertsPage": {
+        "title": "Thông báo & Cảnh báo",
+        "notificationsTitle": "Danh sách thông báo",
+        "noNotificationsMessage": "Không có thông báo",
+        "clearReadButton": "Xóa đã đọc",
+        "settingsTitle": "Cài đặt thông báo",
+        "toggleSuccess": "{action} nhận thông báo cho {type}",
+        "notificationTypes": {
+            "budget_exceeded": "Vượt ngân sách",
+            "bill_due": "Hóa đơn đến hạn",
+            "upcoming_payment": "Thanh toán sắp tới",
+            "investment_change": "Thay đổi đầu tư",
+            "savings_opportunity": "Cơ hội tiết kiệm"
+        },
+        "icons": {
+            "budget_exceeded": "🚨",
+            "bill_due": "📅",
+            "upcoming_payment": "💰",
+            "investment_change": "📈",
+            "savings_opportunity": "🎯"
+        }
+    },
+    "EducationPage": {
+        "title": "Tài chính thông minh mỗi ngày",
+        "subtitle": "Nâng cao kiến thức tài chính cá nhân với các mẹo, công cụ và video hướng dẫn. Từng bước làm chủ chi tiêu, tiết kiệm và đầu tư.",
+        "tipsTitle": "Mẹo tài chính",
+        "videosTitle": "Video học tài chính",
+        "toolsTitle": "Công cụ hỗ trợ",
+        "loadingMessage": "Đang tải dữ liệu...",
+        "errorMessage": "Không thể tải dữ liệu. Vui lòng thử lại sau.",
+        "useToolButton": "Sử dụng ngay"
+    },
+    "LoginPage": {
+        "title": "Đăng nhập",
+        "emailLabel": "Email",
+        "emailPlaceholder": "example@email.com",
+        "passwordLabel": "Mật khẩu",
+        "passwordPlaceholder": "••••••••",
+        "loginButton": "Đăng nhập",
+        "forgotPasswordLink": "Quên mật khẩu?",
+        "registerAccount": "Chưa có tài khoản?",
+        "registerLink": "Đăng ký",
+        "errorInvalidEmail": "Email không hợp lệ",
+        "errorRequiredEmail": "Vui lòng nhập email",
+        "errorRequiredPassword": "Vui lòng nhập mật khẩu",
+        "errorLoginFailed": "Sai email hoặc mật khẩu"
+    },
+    "RegisterPage": {
+        "title": "Đăng ký tài khoản",
+        "fullnameLabel": "Họ và tên",
+        "fullnamePlaceholder": "Nguyễn Văn A",
+        "emailLabel": "Email",
+        "emailPlaceholder": "example@email.com",
+        "passwordLabel": "Mật khẩu",
+        "passwordPlaceholder": "••••••••",
+        "confirmPasswordLabel": "Xác nhận mật khẩu",
+        "confirmPasswordPlaceholder": "••••••••",
+        "registerButton": "Tạo tài khoản",
+        "loginPrompt": "Đã có tài khoản?",
+        "loginLink": "Đăng nhập",
+        "errorInvalidEmail": "Email không hợp lệ",
+        "errorRequiredFullname": "Vui lòng nhập họ tên",
+        "errorRequiredEmail": "Vui lòng nhập email",
+        "errorRequiredPassword": "Vui lòng nhập mật khẩu",
+        "errorMinPasswordLength": "Mật khẩu phải ít nhất 6 ký tự",
+        "errorRequiredConfirmPassword": "Vui lòng xác nhận mật khẩu",
+        "errorPasswordMismatch": "Mật khẩu không khớp"
+    },
+    "ForgotPasswordPage": {
+        "title": "Quên mật khẩu",
+        "subtitle": "Nhập địa chỉ email của bạn để nhận liên kết đặt lại mật khẩu.",
+        "emailLabel": "Email",
+        "emailPlaceholder": "Nhập địa chỉ email của bạn",
+        "sendResetLinkButton": "Gửi liên kết đặt lại",
+        "resetLinkSuccess": "Liên kết đặt lại mật khẩu đã được gửi đến email của bạn!",
+        "resetLinkError": "Không thể gửi email đặt lại mật khẩu!",
+        "invalidEmailError": "Vui lòng nhập email hợp lệ!",
+        "counterTitle": "Bộ đếm",
+        "counterCurrentValue": "Giá trị hiện tại",
+        "incrementButton": "Tăng",
+        "decrementButton": "Giảm",
+        "incrementByAmountButton": "Tăng thêm {amount}"
+    },
+    "ProfilePage": {
+        "title": "Hồ sơ người dùng",
+        "avatarTitle": "Ảnh đại diện",
+        "uploadAvatarButton": "Tải ảnh lên",
+        "avatarUpdateSuccess": "Cập nhật ảnh đại diện thành công!",
+        "profileInfoTitle": "Thông tin cá nhân",
+        "nameLabel": "Họ và tên",
+        "emailLabel": "Email",
+        "passwordLabel": "Mật khẩu mới",
+        "passwordPlaceholder": "Để trống nếu không thay đổi",
+        "saveButton": "Lưu thay đổi",
+        "profileUpdateSuccess": "Cập nhật hồ sơ thành công!",
+        "errorInvalidEmail": "Email không hợp lệ",
+        "errorRequiredName": "Vui lòng nhập họ và tên",
+        "errorRequiredEmail": "Vui lòng nhập email"
+    },
+    "CommonLayout": {
+        "appName": "FinanceApp",
+        "menu": {
+            "home": "Trang chủ",
+            "expenses": "Chi tiêu",
+            "budgets": "Ngân sách",
+            "goals": "Mục tiêu",
+            "investments": "Đầu tư",
+            "debts": "Nợ",
+            "reports": "Báo cáo",
+            "notifications": "Thông báo",
+            "education": "Giáo dục"
+        },
+        "userMenu": {
+            "profile": "Hồ sơ",
+            "logout": "Đăng xuất"
+        },
+        "toggleSidebar": {
+            "expand": "Mở rộng thanh bên",
+            "collapse": "Thu gọn thanh bên"
+        }
+    },
+    "ForgotPassword": {
+        "title": "Quên mật khẩu",
+        "emailPlaceholder": "Nhập địa chỉ email của bạn",
+        "validation": {
+            "requiredEmail": "Vui lòng nhập email của bạn!",
+            "invalidEmail": "Vui lòng nhập email hợp lệ!"
+        },
+        "resetLinkSuccess": "Liên kết đặt lại mật khẩu đã được gửi đến email của bạn!",
+        "resetLinkFail": "Gửi email đặt lại mật khẩu thất bại!",
+        "sendButton": "Gửi liên kết đặt lại"
+    }
+}

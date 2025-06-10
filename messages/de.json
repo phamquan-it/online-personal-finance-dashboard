@@ -1,0 +1,327 @@
+{
+    "Error": {
+        "description": "<p>Leider ist ein Fehler aufgetreten.</p><p>Sie können versuchen, die Seite <retry>neu zu laden</retry>, die Sie besucht haben.</p>",
+        "title": "Etwas ist schief gelaufen!"
+    },
+    "LocaleLayout": {
+        "title": "Online-Dashboard für persönliche Finanzen"
+    },
+    "LocaleSwitcher": {
+        "label": "Sprache ändern",
+        "locale": "{locale, select, de {🇩🇪 Deutsch} en {🇺🇸 Englisch} other {Unbekannt}}"
+    },
+    "Manifest": {
+        "name": "next-intl Beispiel"
+    },
+    "Navigation": {
+        "home": "Startseite",
+        "pathnames": "Pfadnamen"
+    },
+    "NotFoundPage": {
+        "description": "Bitte überprüfen Sie die Adressleiste Ihres Browsers oder navigieren Sie zu einer bekannten Seite.",
+        "title": "Seite nicht gefunden"
+    },
+    "PageLayout": {
+        "links": {
+            "docs": {
+                "description": "Erfahren Sie mehr über next-intl in der offiziellen Dokumentation.",
+                "href": "https://next-intl.dev",
+                "title": "Dokumentation"
+            },
+            "source": {
+                "description": "Durchsuchen Sie den Quellcode dieses Beispiels auf GitHub.",
+                "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+                "title": "Quellcode"
+            }
+        }
+    },
+    "PathnamesPage": {
+        "description": "<p>Die Pfadnamen sind ebenfalls internationalisiert.</p><p>Wenn Sie die Standardsprache Englisch verwenden, wird in der Adressleiste des Browsers <code>/en/pathnames</code> angezeigt.</p><p>Wenn Sie die Sprache auf Deutsch umstellen, wird die URL entsprechend lokalisiert (<code>/de/pfadnamen</code>).</p>",
+        "title": "Pfadnamen"
+    },
+    "DashboardHomePage": {
+        "title": "Finanzübersicht",
+        "subtitle": "Ein schneller Überblick über Ihre persönliche finanzielle Situation, einschließlich Ausgaben, Budget, Investitionen und finanziellen Zielen.",
+        "cards": {
+            "totalIncome": "Monatliches Gesamteinkommen",
+            "totalExpense": "Gesamtausgaben",
+            "savingsRate": "Sparrate",
+            "investmentAssets": "Investitionswerte",
+            "spendingDistribution": "Ausgabenverteilung",
+            "budgetProgress": "Budgetfortschritt nach Kategorien",
+            "savingsGoals": "Fortschritt der Sparziele",
+            "debtOverview": "Übersicht über Schulden und Rückzahlungen"
+        },
+        "debtInfo": {
+            "remainingDebt": "Verbleibende Schulden",
+            "repaymentPlan": "Rückzahlungsplan"
+        },
+        "currency": "VND",
+        "progress": {
+            "current": "Aktuell",
+            "target": "Ziel",
+            "complete": "Erledigt"
+        }
+    },
+    "ExpenseCategoriesPage": {
+        "title": "Ausgabenkategorien",
+        "addCategoryTitle": "Neue Kategorie hinzufügen",
+        "addCategorySuccess": "Kategorie erfolgreich hinzugefügt!",
+        "addCategoryError": "Fehler beim Hinzufügen der Kategorie",
+        "deleteCategorySuccess": "Kategorie erfolgreich gelöscht!",
+        "deleteCategoryError": "Fehler beim Löschen der Kategorie",
+        "deleteConfirm": "Sind Sie sicher, dass Sie löschen möchten?",
+        "categoryName": "Kategoriename",
+        "categoryDescription": "Beschreibung",
+        "actions": "Aktionen",
+        "addButton": "Hinzufügen",
+        "placeholderName": "Kategoriename",
+        "placeholderDescription": "Beschreibung (optional)",
+        "existingCategoriesTitle": "Aktuelle Kategorienliste"
+    },
+    "BudgetPage": {
+        "title": "Budget",
+        "subtitle": "Verfolgen und verwalten Sie Ihr Ausgaben-Budget, um sicherzustellen, dass Sie innerhalb Ihrer finanziellen Grenzen bleiben.",
+        "addBudgetTitle": "Neues Budget erstellen",
+        "addBudgetSuccess": "Budget hinzugefügt!",
+        "addBudgetError": "Fehler beim Hinzufügen des Budgets.",
+        "deleteBudgetSuccess": "Budget erfolgreich gelöscht!",
+        "deleteBudgetError": "Fehler beim Löschen des Budgets.",
+        "budgetCategory": "Kategorie",
+        "budgetAmount": "Budget",
+        "budgetSpent": "Ausgegeben",
+        "budgetFrequency": "Häufigkeit",
+        "overBudgetWarning": "Budgetüberschreitung!",
+        "budgetWeekly": "Wöchentlich",
+        "budgetMonthly": "Monatlich",
+        "budgetYearly": "Jährlich",
+        "budgetAction": "Aktionen",
+        "placeholderCategory": "z.B.: Einkaufen, Miete...",
+        "placeholderAmount": "Budgetbetrag eingeben",
+        "placeholderSpent": "Ausgabenbetrag eingeben",
+        "placeholderFrequency": "Häufigkeit auswählen",
+        "addButton": "Budget hinzufügen"
+    },
+    "GoalsPage": {
+        "title": "Finanzielle Ziele",
+        "subtitle": "Erstellen und verfolgen Sie Ihren Sparfortschritt für kurz- und langfristige Ziele.",
+        "addGoalTitle": "Neues Ziel hinzufügen",
+        "addGoalSuccess": "Ziel hinzugefügt!",
+        "addGoalError": "Fehler beim Hinzufügen des Ziels",
+        "goalName": "Zielname",
+        "goalTargetAmount": "Zielbetrag",
+        "goalSavedAmount": "Gesparte Summe",
+        "goalDeadline": "Frist",
+        "goalProgress": "Sparfortschritt",
+        "timeLeft": "Verbleibende Zeit",
+        "addButton": "Ziel hinzufügen",
+        "placeholderName": "z.B.: Motorrad kaufen, reisen...",
+        "placeholderTargetAmount": "Zielbetrag eingeben",
+        "placeholderSavedAmount": "Gesparte Summe eingeben",
+        "placeholderDeadline": "Frist auswählen"
+    },
+    "InvestmentsPage": {
+        "title": "Investitionsüberwachung",
+        "subtitle": "Verwalten und analysieren Sie die Performance Ihrer Investitionen im Zeitverlauf.",
+        "addInvestmentTitle": "Neue Investition hinzufügen",
+        "addInvestmentSuccess": "Investition hinzugefügt!",
+        "addInvestmentError": "Fehler beim Hinzufügen der Investition.",
+        "investmentName": "Investitionsname",
+        "investmentType": "Anlagetyp",
+        "investmentAmount": "Investitionsbetrag",
+        "investmentReturnRate": "Rendite (%)",
+        "totalPortfolio": "Portfolioübersicht",
+        "totalValue": "Gesamtwert",
+        "assetAllocation": "Vermögensaufteilung",
+        "investmentDetails": "Portfoliodetails",
+        "investmentStock": "Aktien",
+        "investmentBond": "Anleihen",
+        "investmentRealEstate": "Immobilien",
+        "investmentCrypto": "Kryptowährungen",
+        "investmentOther": "Andere",
+        "addButton": "Hinzufügen",
+        "placeholderName": "Investitionsname eingeben",
+        "placeholderType": "Anlagetyp auswählen",
+        "placeholderAmount": "Investitionsbetrag eingeben",
+        "placeholderReturnRate": "Rendite (%) eingeben"
+    },
+    "DebtManagementPage": {
+        "title": "Schuldenverwaltung",
+        "tabs": {
+            "overview": "Übersicht",
+            "schedule": "Zahlungsplan",
+            "plan": "Rückzahlungsplan",
+            "add": "Schuld hinzufügen"
+        },
+        "addDebtTitle": "Neue Schuld hinzufügen",
+        "addDebtSuccess": "Schuld hinzugefügt!",
+        "addDebtError": "Fehler beim Hinzufügen der Schuld!",
+        "debtType": "Schuldentyp",
+        "debtName": "Schuldenname",
+        "debtTotal": "Gesamtschulden",
+        "debtPaid": "Bereits bezahlt",
+        "debtRemaining": "Restbetrag",
+        "debtDueDate": "Fälligkeitsdatum",
+        "debtMonthlyPayment": "Monatliche Zahlung",
+        "debtStartDate": "Startdatum",
+        "debtProgress": "Zahlungsfortschritt",
+        "debtProjectedPayoff": "Geschätzte Tilgung",
+        "paymentSchedule": "Zahlungsplan",
+        "repaymentPlan": "Rückzahlungsplan",
+        "addButton": "Schuld hinzufügen",
+        "placeholderType": "z.B.: Kreditkarte, Bankdarlehen...",
+        "placeholderName": "Schuldenname eingeben",
+        "placeholderTotal": "Gesamtschulden eingeben",
+        "placeholderPaid": "Bereits bezahlten Betrag eingeben",
+        "placeholderMonthlyPayment": "Monatliche Zahlung eingeben",
+        "placeholderStartDate": "Startdatum auswählen",
+        "placeholderDueDate": "Fälligkeitsdatum auswählen"
+    },
+    "ReportsPage": {
+        "title": "Berichte & Analyse",
+        "subtitle": "Fassen Sie Ihre Finanzdaten zusammen, um Ihre Ausgaben, Einnahmen und Ersparnisse zu verstehen.",
+        "loadingMessage": "Daten werden geladen...",
+        "errorMessage": "Daten konnten nicht geladen werden. Bitte versuchen Sie es später noch einmal.",
+        "totalIncome": "Gesamteinnahmen in diesem Monat",
+        "totalExpense": "Gesamtausgaben in diesem Monat",
+        "savingRate": "Sparquote",
+        "incomeChartTitle": "Monatliches Einnahmen-Diagramm",
+        "spendingDistributionTitle": "Ausgabenverteilung",
+        "tooltipIncome": "Einnahmen",
+        "tooltipExpense": "Ausgaben",
+        "chartLegend": "Kategorien",
+        "currency": "VND"
+    },
+    "NotificationsAlertsPage": {
+        "title": "Benachrichtigungen & Alarme",
+        "notificationsTitle": "Benachrichtigungsliste",
+        "noNotificationsMessage": "Keine Benachrichtigungen",
+        "clearReadButton": "Gelesene löschen",
+        "settingsTitle": "Benachrichtigungseinstellungen",
+        "toggleSuccess": "{action} Benachrichtigungen für {type}",
+        "notificationTypes": {
+            "budget_exceeded": "Budget überschritten",
+            "bill_due": "Rechnung fällig",
+            "upcoming_payment": "Bevorstehende Zahlung",
+            "investment_change": "Investitionsänderung",
+            "savings_opportunity": "Sparmöglichkeit"
+        },
+        "icons": {
+            "budget_exceeded": "🚨",
+            "bill_due": "📅",
+            "upcoming_payment": "💰",
+            "investment_change": "📈",
+            "savings_opportunity": "🎯"
+        }
+    },
+    "EducationPage": {
+        "title": "Tägliche smarte Finanzen",
+        "subtitle": "Verbessern Sie Ihr Wissen über persönliche Finanzen mit Tipps, Werkzeugen und Videotutorials. Lernen Sie Schritt für Schritt, wie Sie Ausgaben, Ersparnisse und Investitionen meistern.",
+        "tipsTitle": "Finanztipps",
+        "videosTitle": "Finanzvideos",
+        "toolsTitle": "Hilfswerkzeuge",
+        "loadingMessage": "Daten werden geladen...",
+        "errorMessage": "Daten konnten nicht geladen werden. Bitte versuchen Sie es später noch einmal.",
+        "useToolButton": "Jetzt verwenden"
+    },
+    "LoginPage": {
+        "title": "Anmelden",
+        "emailLabel": "E-Mail",
+        "emailPlaceholder": "example@email.com",
+        "passwordLabel": "Passwort",
+        "passwordPlaceholder": "••••••••",
+        "loginButton": "Anmelden",
+        "forgotPasswordLink": "Passwort vergessen?",
+        "registerAccount": "Noch kein Konto?",
+        "registerLink": "Registrieren",
+        "errorInvalidEmail": "Ungültige E-Mail",
+        "errorRequiredEmail": "Bitte E-Mail eingeben",
+        "errorRequiredPassword": "Bitte Passwort eingeben",
+        "errorLoginFailed": "Falsche E-Mail oder falsches Passwort"
+    },
+    "RegisterPage": {
+        "title": "Konto registrieren",
+        "fullnameLabel": "Vollständiger Name",
+        "fullnamePlaceholder": "Max Mustermann",
+        "emailLabel": "E-Mail",
+        "emailPlaceholder": "example@email.com",
+        "passwordLabel": "Passwort",
+        "passwordPlaceholder": "••••••••",
+        "confirmPasswordLabel": "Passwort bestätigen",
+        "confirmPasswordPlaceholder": "••••••••",
+        "registerButton": "Konto erstellen",
+        "loginPrompt": "Bereits ein Konto?",
+        "loginLink": "Anmelden",
+        "errorInvalidEmail": "Ungültige E-Mail",
+        "errorRequiredFullname": "Bitte vollständigen Namen eingeben",
+        "errorRequiredEmail": "Bitte E-Mail eingeben",
+        "errorRequiredPassword": "Bitte Passwort eingeben",
+        "errorMinPasswordLength": "Das Passwort muss mindestens 6 Zeichen haben",
+        "errorRequiredConfirmPassword": "Bitte Passwort bestätigen",
+        "errorPasswordMismatch": "Passwörter stimmen nicht überein"
+    },
+    "ForgotPasswordPage": {
+        "title": "Passwort vergessen",
+        "subtitle": "Geben Sie Ihre E-Mail-Adresse ein, um einen Link zum Zurücksetzen des Passworts zu erhalten.",
+        "emailLabel": "E-Mail",
+        "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+        "sendResetLinkButton": "Link senden",
+        "resetLinkSuccess": "Der Link zum Zurücksetzen des Passworts wurde an Ihre E-Mail gesendet!",
+        "resetLinkError": "Fehler beim Senden des Reset-Links!",
+        "invalidEmailError": "Bitte geben Sie eine gültige E-Mail ein!",
+        "counterTitle": "Zähler",
+        "counterCurrentValue": "Aktueller Wert",
+        "incrementButton": "Erhöhen",
+        "decrementButton": "Verringern",
+        "incrementByAmountButton": "Erhöhen um {amount}"
+    },
+    "ProfilePage": {
+        "title": "Benutzerprofil",
+        "avatarTitle": "Avatar",
+        "uploadAvatarButton": "Avatar hochladen",
+        "avatarUpdateSuccess": "Avatar erfolgreich aktualisiert!",
+        "profileInfoTitle": "Persönliche Informationen",
+        "nameLabel": "Vollständiger Name",
+        "emailLabel": "E-Mail",
+        "passwordLabel": "Neues Passwort",
+        "passwordPlaceholder": "Leer lassen, wenn nicht geändert",
+        "saveButton": "Änderungen speichern",
+        "profileUpdateSuccess": "Profil erfolgreich aktualisiert!",
+        "errorInvalidEmail": "Ungültige E-Mail",
+        "errorRequiredName": "Bitte vollständigen Namen eingeben",
+        "errorRequiredEmail": "Bitte E-Mail eingeben"
+    },
+    "CommonLayout": {
+        "appName": "FinanceApp",
+        "menu": {
+            "home": "Startseite",
+            "expenses": "Ausgaben",
+            "budgets": "Budgets",
+            "goals": "Ziele",
+            "investments": "Investitionen",
+            "debts": "Schulden",
+            "reports": "Berichte",
+            "notifications": "Benachrichtigungen",
+            "education": "Bildung"
+        },
+        "userMenu": {
+            "profile": "Profil",
+            "logout": "Abmelden"
+        },
+        "toggleSidebar": {
+            "expand": "Seitenleiste erweitern",
+            "collapse": "Seitenleiste reduzieren"
+        }
+    },
+    "ForgotPassword": {
+        "title": "Passwort vergessen",
+        "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+        "validation": {
+            "requiredEmail": "Bitte geben Sie Ihre E-Mail ein!",
+            "invalidEmail": "Bitte geben Sie eine gültige E-Mail ein!"
+        },
+        "resetLinkSuccess": "Link zum Zurücksetzen des Passworts wurde an Ihre E-Mail gesendet!",
+        "resetLinkFail": "Passwort-Reset-E-Mail konnte nicht gesendet werden!",
+        "sendButton": "Reset-Link senden"
+    }
+}

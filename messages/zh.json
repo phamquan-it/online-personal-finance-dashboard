@@ -1,0 +1,327 @@
+{
+    "Error": {
+        "description": "<p>很抱歉，我们遇到了错误。</p><p>您可以尝试 <retry>重新加载</retry> 所访问的页面。</p>",
+        "title": "出错了！"
+    },
+    "LocaleLayout": {
+        "title": "个人在线财务仪表板"
+    },
+    "LocaleSwitcher": {
+        "label": "切换语言",
+        "locale": "{locale, select, de {🇩🇪 德语} en {🇺🇸 英语} other {未知}}"
+    },
+    "Manifest": {
+        "name": "next-intl 示例"
+    },
+    "Navigation": {
+        "home": "主页",
+        "pathnames": "路径名称"
+    },
+    "NotFoundPage": {
+        "description": "请检查浏览器地址栏，或者使用导航前往已知页面。",
+        "title": "页面未找到"
+    },
+    "PageLayout": {
+        "links": {
+            "docs": {
+                "description": "在官方文档中了解更多关于 next-intl 的信息。",
+                "href": "https://next-intl.dev",
+                "title": "文档"
+            },
+            "source": {
+                "description": "在 GitHub 上浏览该示例的源代码。",
+                "href": "https://github.com/amannn/next-intl/tree/main/examples/example-app-router",
+                "title": "源代码"
+            }
+        }
+    },
+    "PathnamesPage": {
+        "description": "<p>路径名称也进行了国际化。</p><p>如果您使用默认语言英语，这个页面在浏览器地址栏中将显示 <code>/en/pathnames</code>。</p><p>如果您将语言更改为德语，URL 将相应地本地化（<code>/de/pfadnamen</code>）。</p>",
+        "title": "路径名称"
+    },
+    "DashboardHomePage": {
+        "title": "财务概览",
+        "subtitle": "快速了解您的个人财务状况，包括支出、预算、投资和财务目标。",
+        "cards": {
+            "totalIncome": "每月总收入",
+            "totalExpense": "总支出",
+            "savingsRate": "储蓄率",
+            "investmentAssets": "投资资产",
+            "spendingDistribution": "支出分布",
+            "budgetProgress": "各类别预算进度",
+            "savingsGoals": "储蓄目标进度",
+            "debtOverview": "债务及还款概况"
+        },
+        "debtInfo": {
+            "remainingDebt": "剩余债务",
+            "repaymentPlan": "还款计划"
+        },
+        "currency": "VND",
+        "progress": {
+            "current": "当前",
+            "target": "目标",
+            "complete": "完成"
+        }
+    },
+    "ExpenseCategoriesPage": {
+        "title": "支出类别",
+        "addCategoryTitle": "添加新类别",
+        "addCategorySuccess": "类别添加成功！",
+        "addCategoryError": "添加类别时出错",
+        "deleteCategorySuccess": "类别删除成功！",
+        "deleteCategoryError": "删除类别时出错",
+        "deleteConfirm": "您确定要删除吗？",
+        "categoryName": "类别名称",
+        "categoryDescription": "描述",
+        "actions": "操作",
+        "addButton": "添加",
+        "placeholderName": "类别名称",
+        "placeholderDescription": "描述（可选）",
+        "existingCategoriesTitle": "当前类别列表"
+    },
+    "BudgetPage": {
+        "title": "预算",
+        "subtitle": "跟踪和管理您的支出预算，以确保不超出财务限制。",
+        "addBudgetTitle": "创建新预算",
+        "addBudgetSuccess": "预算已添加！",
+        "addBudgetError": "添加预算时出错。",
+        "deleteBudgetSuccess": "预算删除成功！",
+        "deleteBudgetError": "删除预算时出错。",
+        "budgetCategory": "类别",
+        "budgetAmount": "预算金额",
+        "budgetSpent": "已支出",
+        "budgetFrequency": "频率",
+        "overBudgetWarning": "超出预算！",
+        "budgetWeekly": "每周",
+        "budgetMonthly": "每月",
+        "budgetYearly": "每年",
+        "budgetAction": "操作",
+        "placeholderCategory": "例如：购物、租房...",
+        "placeholderAmount": "输入预算金额",
+        "placeholderSpent": "输入已支出金额",
+        "placeholderFrequency": "选择频率",
+        "addButton": "添加预算"
+    },
+    "GoalsPage": {
+        "title": "财务目标",
+        "subtitle": "创建并跟踪您短期和长期目标的储蓄进度。",
+        "addGoalTitle": "添加新目标",
+        "addGoalSuccess": "目标已添加！",
+        "addGoalError": "添加目标失败",
+        "goalName": "目标名称",
+        "goalTargetAmount": "目标金额",
+        "goalSavedAmount": "已储蓄金额",
+        "goalDeadline": "截止日期",
+        "goalProgress": "储蓄进度",
+        "timeLeft": "剩余时间",
+        "addButton": "添加目标",
+        "placeholderName": "例如：购买摩托车、旅行...",
+        "placeholderTargetAmount": "输入目标金额",
+        "placeholderSavedAmount": "输入已储蓄金额",
+        "placeholderDeadline": "选择截止日期"
+    },
+    "InvestmentsPage": {
+        "title": "投资跟踪",
+        "subtitle": "管理并分析您投资的表现随时间的变化。",
+        "addInvestmentTitle": "添加新投资",
+        "addInvestmentSuccess": "投资已添加！",
+        "addInvestmentError": "添加投资时出错。",
+        "investmentName": "投资名称",
+        "investmentType": "资产类型",
+        "investmentAmount": "投资金额",
+        "investmentReturnRate": "回报率 (%)",
+        "totalPortfolio": "投资组合概览",
+        "totalValue": "总价值",
+        "assetAllocation": "资产配置",
+        "investmentDetails": "投资组合详情",
+        "investmentStock": "股票",
+        "investmentBond": "债券",
+        "investmentRealEstate": "房地产",
+        "investmentCrypto": "加密货币",
+        "investmentOther": "其他",
+        "addButton": "添加",
+        "placeholderName": "输入投资名称",
+        "placeholderType": "选择资产类型",
+        "placeholderAmount": "输入投资金额",
+        "placeholderReturnRate": "输入回报率 (%)"
+    },
+    "DebtManagementPage": {
+        "title": "债务管理",
+        "tabs": {
+            "overview": "概览",
+            "schedule": "还款计划",
+            "plan": "还款方案",
+            "add": "添加债务"
+        },
+        "addDebtTitle": "添加新债务",
+        "addDebtSuccess": "债务已添加！",
+        "addDebtError": "添加债务时出错！",
+        "debtType": "债务类型",
+        "debtName": "债务名称",
+        "debtTotal": "债务总额",
+        "debtPaid": "已还金额",
+        "debtRemaining": "剩余金额",
+        "debtDueDate": "到期日",
+        "debtMonthlyPayment": "每月还款",
+        "debtStartDate": "开始日期",
+        "debtProgress": "还款进度",
+        "debtProjectedPayoff": "预计还清时间",
+        "paymentSchedule": "还款计划",
+        "repaymentPlan": "还款方案",
+        "addButton": "添加债务",
+        "placeholderType": "例如：信用卡、银行贷款...",
+        "placeholderName": "输入债务名称",
+        "placeholderTotal": "输入债务总额",
+        "placeholderPaid": "输入已还金额",
+        "placeholderMonthlyPayment": "输入每月还款额",
+        "placeholderStartDate": "选择开始日期",
+        "placeholderDueDate": "选择到期日"
+    },
+    "ReportsPage": {
+        "title": "报告与分析",
+        "subtitle": "汇总您的财务数据，帮助您了解支出、收入和储蓄情况。",
+        "loadingMessage": "正在加载数据...",
+        "errorMessage": "无法加载数据，请稍后再试。",
+        "totalIncome": "本月总收入",
+        "totalExpense": "本月总支出",
+        "savingRate": "储蓄率",
+        "incomeChartTitle": "每月收入图表",
+        "spendingDistributionTitle": "支出分布",
+        "tooltipIncome": "收入",
+        "tooltipExpense": "支出",
+        "chartLegend": "类别",
+        "currency": "VND"
+    },
+    "NotificationsAlertsPage": {
+        "title": "通知与警报",
+        "notificationsTitle": "通知列表",
+        "noNotificationsMessage": "没有通知",
+        "clearReadButton": "清除已读",
+        "settingsTitle": "通知设置",
+        "toggleSuccess": "{action} {type} 的通知",
+        "notificationTypes": {
+            "budget_exceeded": "超出预算",
+            "bill_due": "账单到期",
+            "upcoming_payment": "即将支付",
+            "investment_change": "投资变动",
+            "savings_opportunity": "储蓄机会"
+        },
+        "icons": {
+            "budget_exceeded": "🚨",
+            "bill_due": "📅",
+            "upcoming_payment": "💰",
+            "investment_change": "📈",
+            "savings_opportunity": "🎯"
+        }
+    },
+    "EducationPage": {
+        "title": "每日智能理财",
+        "subtitle": "通过理财建议、工具和视频教程提升您的个人理财知识。逐步掌握支出、储蓄和投资。",
+        "tipsTitle": "理财技巧",
+        "videosTitle": "理财视频",
+        "toolsTitle": "辅助工具",
+        "loadingMessage": "正在加载数据...",
+        "errorMessage": "无法加载数据，请稍后再试。",
+        "useToolButton": "立即使用"
+    },
+    "LoginPage": {
+        "title": "登录",
+        "emailLabel": "电子邮件",
+        "emailPlaceholder": "example@email.com",
+        "passwordLabel": "密码",
+        "passwordPlaceholder": "••••••••",
+        "loginButton": "登录",
+        "forgotPasswordLink": "忘记密码？",
+        "registerAccount": "还没有账户?",
+        "registerLink": "注册",
+        "errorInvalidEmail": "无效的电子邮件",
+        "errorRequiredEmail": "请输入电子邮件",
+        "errorRequiredPassword": "请输入密码",
+        "errorLoginFailed": "电子邮件或密码错误"
+    },
+    "RegisterPage": {
+        "title": "注册账户",
+        "fullnameLabel": "全名",
+        "fullnamePlaceholder": "张三",
+        "emailLabel": "电子邮件",
+        "emailPlaceholder": "example@email.com",
+        "passwordLabel": "密码",
+        "passwordPlaceholder": "••••••••",
+        "confirmPasswordLabel": "确认密码",
+        "confirmPasswordPlaceholder": "••••••••",
+        "registerButton": "创建账户",
+        "loginPrompt": "已有账户？",
+        "loginLink": "登录",
+        "errorInvalidEmail": "无效的电子邮件",
+        "errorRequiredFullname": "请输入全名",
+        "errorRequiredEmail": "请输入电子邮件",
+        "errorRequiredPassword": "请输入密码",
+        "errorMinPasswordLength": "密码至少需要6个字符",
+        "errorRequiredConfirmPassword": "请确认密码",
+        "errorPasswordMismatch": "两次输入的密码不匹配"
+    },
+    "ForgotPasswordPage": {
+        "title": "忘记密码",
+        "subtitle": "请输入您的电子邮件地址以接收密码重置链接。",
+        "emailLabel": "电子邮件",
+        "emailPlaceholder": "请输入您的电子邮件地址",
+        "sendResetLinkButton": "发送重置链接",
+        "resetLinkSuccess": "密码重置链接已发送至您的电子邮件！",
+        "resetLinkError": "发送密码重置链接失败！",
+        "invalidEmailError": "请输入有效的电子邮件！",
+        "counterTitle": "计数器",
+        "counterCurrentValue": "当前数值",
+        "incrementButton": "增加",
+        "decrementButton": "减少",
+        "incrementByAmountButton": "增加 {amount}"
+    },
+    "ProfilePage": {
+        "title": "用户资料",
+        "avatarTitle": "头像",
+        "uploadAvatarButton": "上传头像",
+        "avatarUpdateSuccess": "头像更新成功！",
+        "profileInfoTitle": "个人信息",
+        "nameLabel": "全名",
+        "emailLabel": "电子邮件",
+        "passwordLabel": "新密码",
+        "passwordPlaceholder": "若不修改请留空",
+        "saveButton": "保存更改",
+        "profileUpdateSuccess": "资料更新成功！",
+        "errorInvalidEmail": "无效的电子邮件",
+        "errorRequiredName": "请输入全名",
+        "errorRequiredEmail": "请输入电子邮件"
+    },
+    "CommonLayout": {
+        "appName": "FinanceApp",
+        "menu": {
+            "home": "主页",
+            "expenses": "支出",
+            "budgets": "预算",
+            "goals": "目标",
+            "investments": "投资",
+            "debts": "债务",
+            "reports": "报告",
+            "notifications": "通知",
+            "education": "教育"
+        },
+        "userMenu": {
+            "profile": "个人资料",
+            "logout": "退出登录"
+        },
+        "toggleSidebar": {
+            "expand": "展开侧边栏",
+            "collapse": "折叠侧边栏"
+        }
+    },
+    "ForgotPassword": {
+        "title": "忘记密码",
+        "emailPlaceholder": "请输入您的电子邮件地址",
+        "validation": {
+            "requiredEmail": "请输入您的电子邮件!",
+            "invalidEmail": "请输入有效的电子邮件!"
+        },
+        "resetLinkSuccess": "密码重置链接已发送到您的电子邮箱!",
+        "resetLinkFail": "密码重置邮件发送失败!",
+        "sendButton": "发送重置链接"
+    }
+}
