@@ -1,18 +1,6 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { Dayjs } from 'dayjs'
 
-export interface Debt {
-  id?:string| number
-  key: string
-  type: string
-  name: string
-  total: number
-  paid: number
-  monthlyPayment: number
-  dueDate: string | Dayjs 
-  startDate?: string 
-}
-
 export const debtApi = createApi({
   reducerPath: 'debtApi',
   baseQuery: fetchBaseQuery({ baseUrl: '/api/' }),

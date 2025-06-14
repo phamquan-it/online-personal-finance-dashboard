@@ -1,19 +1,14 @@
 // app/api/categories/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 
-interface Category {
-  key: string
-  name: string
-  description: string
-}
 
-// Dữ liệu lưu tạm (khi reload server sẽ mất)
+
 const categories: Category[] = [
-  { key: '1', name: 'Ăn uống', description: 'Nhà hàng, thực phẩm, nước uống' },
-  { key: '2', name: 'Giáo dục', description: 'Học phí, sách vở, khóa học' },
-  { key: '3', name: 'Giải trí', description: 'Phim ảnh, game, sự kiện' },
-  { key: '4', name: 'Thuê nhà', description: 'Tiền thuê nhà, bảo trì' },
-]
+  { key: '1', name: 'Ăn uống', description: 'Nhà hàng, thực phẩm, nước uống', amount: 1500000 },
+  { key: '2', name: 'Giáo dục', description: 'Học phí, sách vở, khóa học', amount: 2000000 },
+  { key: '3', name: 'Giải trí', description: 'Phim ảnh, game, sự kiện', amount: 500000 },
+  { key: '4', name: 'Thuê nhà', description: 'Tiền thuê nhà, bảo trì', amount: 3500000 },
+];
 
 export async function GET() {
   return NextResponse.json(categories)

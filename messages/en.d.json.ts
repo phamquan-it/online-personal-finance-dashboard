@@ -67,6 +67,7 @@ declare const messages: {
         }
     },
     "ExpenseCategoriesPage": {
+        "editTitle": "Edit",
         "title": "Expense Categories",
         "addCategoryTitle": "Add New Category",
         "addCategorySuccess": "Category added successfully!",
@@ -76,13 +77,24 @@ declare const messages: {
         "deleteConfirm": "Are you sure you want to delete?",
         "categoryName": "Category Name",
         "categoryDescription": "Description",
+        "categoryAmount": "Amount",
         "actions": "Actions",
         "addButton": "Add",
+        "saveButton": "Save",
         "placeholderName": "Category Name",
         "placeholderDescription": "Description (optional)",
+        "placeholderAmount": "Amount",
+        "addAmountError": "Please enter the amount",
         "existingCategoriesTitle": "Current Categories List"
     },
     "BudgetPage": {
+        "cancelButton": "Cancel",
+        "editBudget": "Edit Budget",
+        "deleteBudget": "Delete Budget",
+        "saveButton": "Save",
+        "placeholderCategory": "Enter category",
+        "placeholderAmount": "Enter amount",
+        "placeholderFrequency": "Select frequency",
         "title": "Budget",
         "subtitle": "Track and manage your spending budget to stay within your financial limits.",
         "addBudgetTitle": "Create New Budget",
@@ -121,9 +133,24 @@ declare const messages: {
         "placeholderName": "e.g.: Buy a motorbike, travel...",
         "placeholderTargetAmount": "Enter target amount",
         "placeholderSavedAmount": "Enter saved amount",
-        "placeholderDeadline": "Select deadline"
+        "placeholderDeadline": "Select deadline",
+        "edit": "Edit",
+        "delete": "Delete",
+        "saveButton": "Save",
+        "cancelButton": "Cancel",
+        "required": "Required",
+        "deleteClicked": "Delete clicked!",
+        "saveSuccess": "Changes saved",
+        "requiredName": "Enter goal name",
+        "requiredAmount": "Enter amount",
+        "requiredDeadline": "Select deadline"
     },
     "InvestmentsPage": {
+        "modalEditTab": "Edit",
+        "modalDeleteTab": "Delete",
+        "modalConfirmDelete": "Are you sure you want to delete {name}?",
+        "modalConfirmDeleteButton": "Confirm Delete",
+        "modalSaveChangesButton": "Save Changes",
         "title": "Investment Tracking",
         "subtitle": "Manage and analyze the performance of your investments over time.",
         "addInvestmentTitle": "Add New Investment",
@@ -149,6 +176,7 @@ declare const messages: {
         "placeholderReturnRate": "Enter return rate (%)"
     },
     "DebtManagementPage": {
+        "actions": "Action",
         "title": "Debt Management",
         "tabs": {
             "overview": "Overview",
@@ -159,6 +187,10 @@ declare const messages: {
         "addDebtTitle": "Add New Debt",
         "addDebtSuccess": "Debt added!",
         "addDebtError": "Failed to add debt!",
+        "updateDebtSuccess": "Debt updated!",
+        "updateDebtError": "Failed to update debt!",
+        "deleteDebtSuccess": "Debt deleted!",
+        "deleteDebtError": "Failed to delete debt!",
         "debtType": "Debt Type",
         "debtName": "Debt Name",
         "debtTotal": "Total Debt",
@@ -172,6 +204,11 @@ declare const messages: {
         "paymentSchedule": "Payment Schedule",
         "repaymentPlan": "Repayment Plan",
         "addButton": "Add Debt",
+        "editDebt": "Edit Debt",
+        "saveButton": "Save",
+        "deleteConfirm": "Are you sure you want to delete this debt?",
+        "deleteButton": "Delete",
+        "editButton": "Edit",
         "placeholderType": "e.g.: Credit Card, Bank Loan...",
         "placeholderName": "Enter debt name",
         "placeholderTotal": "Enter total debt",
@@ -180,6 +217,7 @@ declare const messages: {
         "placeholderStartDate": "Select start date",
         "placeholderDueDate": "Select due date"
     },
+
     "ReportsPage": {
         "title": "Reports & Analytics",
         "subtitle": "Summarize your financial data to understand your spending, income, and savings.",

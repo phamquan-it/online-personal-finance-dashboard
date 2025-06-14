@@ -12,8 +12,10 @@ import {
   Popconfirm,
   Form,
   message,
+  Dropdown,
+  InputNumber,
 } from 'antd'
-import { PlusOutlined, DeleteOutlined } from '@ant-design/icons'
+import { PlusOutlined, DeleteOutlined, EditOutlined } from '@ant-design/icons'
 import {
   useAddCategoryMutation,
   useDeleteCategoryMutation,
@@ -26,15 +28,16 @@ const { Title } = Typography
 
 const ExpenseCategoriesPage = () => {
   const [form] = Form.useForm()
+  const [editForm] = Form.useForm()
   const t = useTranslations('ExpenseCategoriesPage')
-  const locale = useLocale() // Retrieves current locale, e.g., "en" or "vi"
+  const locale = useLocale()
 
   const { data: categories = [], isFetching } = useGetCategoriesQuery()
   const [addCategory, { isLoading: adding }] = useAddCategoryMutation()
   const [deleteCategory] = useDeleteCategoryMutation()
   const [messageApi, contextHolder] = message.useMessage()
 
-  const handleAdd = async (values: { name: string; description: string }) => {
+  const handleAdd = async (values: { name: string; description: string; amount: number }) => {
     try {
       await addCategory(values).unwrap()
       messageApi.success(t('addCategorySuccess'))
@@ -53,6 +56,12 @@ const ExpenseCategoriesPage = () => {
     }
   }
 
+  const formatCurrency = (value: number) =>
+    new Intl.NumberFormat(locale, {
+      style: 'currency',
+      currency: 'USD', // Replace with your currency if needed
+    }).format(value)
+
   const columns = [
     {
       title: t('categoryName'),
@@ -65,6 +74,12 @@ const ExpenseCategoriesPage = () => {
       key: 'description',
     },
     {
+      title: t('categoryAmount'),
+      dataIndex: 'amount',
+      key: 'amount',
+      render: (value: number) => formatCurrency(value),
+    },
+    {
       title: t('actions'),
       key: 'action',
       render: (_: any, record: any) => (
@@ -75,6 +90,70 @@ const ExpenseCategoriesPage = () => {
           >
             <Button icon={<DeleteOutlined />} danger size="small" />
           </Popconfirm>
+          <Dropdown
+            trigger={['click']}
+            dropdownRender={() => (
+              <Card title={t('editTitle')} classNames={{ title: '!text-center' }}>
+                <Form
+                  form={editForm}
+                  layout="vertical"
+                  initialValues={{
+                    name: record.name,
+                    description: record.description,
+                    amount: record.amount,
+                  }}
+                  onFinish={(values) => {
+                    console.log('Edit values:', values)
+                    // handleUpdate(record.key, values)
+                  }}
+                >
+                  <Form.Item
+                    label={t('categoryName')}
+                    name="name"
+                    rules={[{ required: true, message: t('addCategoryError') }]}
+                  >
+                    <Input placeholder={t('placeholderName')} />
+                  </Form.Item>
+
+                  <Form.Item
+                    label={t('categoryDescription')}
+                    name="description"
+                  >
+                    <Input placeholder={t('placeholderDescription')} />
+                  </Form.Item>
+
+                  <Form.Item
+                    label={t('categoryAmount')}
+                    name="amount"
+                    rules={[{ required: true, message: t('addAmountError') }]}
+                  >
+                    <InputNumber
+                      style={{ width: '100%' }}
+                      placeholder={t('placeholderAmount')}
+                      formatter={(value) =>
+                        `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+                      }
+                      parser={(value) =>
+                        value ? value.replace(/\$\s?|(,*)/g, '') : ''
+                      }
+                    />
+                  </Form.Item>
+
+                  <Form.Item>
+                    <Button type="primary" htmlType="submit" size="small">
+                      {t('saveButton')}
+                    </Button>
+                  </Form.Item>
+                </Form>
+              </Card>
+            )}
+            placement="topRight"
+          >
+            <Button
+              icon={<EditOutlined />}
+              size="small"
+            />
+          </Dropdown>
         </Space>
       ),
     },
@@ -97,6 +176,18 @@ const ExpenseCategoriesPage = () => {
           </Form.Item>
           <Form.Item name="description">
             <Input placeholder={t('placeholderDescription')} />
+          </Form.Item>
+          <Form.Item
+            name="amount"
+            rules={[{ required: true, message: t('addAmountError') }]}
+          >
+            <InputNumber
+              placeholder={t('placeholderAmount')}
+              formatter={(value) =>
+                `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
+              }
+              parser={(value) => value ? value.replace(/\$\s?|(,*)/g, '') : ''}
+            />
           </Form.Item>
           <Form.Item>
             <Button
