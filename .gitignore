@@ -1,0 +1,34 @@
+# .NET build artifacts
+bin/
+obj/
+publish/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Rider and VSCode
+.idea/
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# ASP.NET secrets & environment configs
+appsettings.Development.json
+
+# Logs
+*.log
+
+# EF Core migrations snapshots (optional)
+Migrations/  # <-- keep if you don't want to track migrations, or remove this line if you do
+
+# Ignore sensitive publish profiles
+Properties/PublishProfiles/
+
+# Other
+*.swp
+*.tmp
