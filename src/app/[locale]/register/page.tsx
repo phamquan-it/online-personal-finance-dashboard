@@ -17,7 +17,7 @@ import {
     LockOutlined,
     MailOutlined,
 } from '@ant-design/icons';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useRegisterMutation } from '@/libs/redux/services/authApi';
 
@@ -165,7 +165,7 @@ const RegisterPage = () => {
                 <div style={{ textAlign: 'center', marginTop: 16 }}>
                     <Text type="secondary">
                         {t('loginPrompt')}{' '}
-                        <Link href="/login">{t('loginLink')}</Link>
+                        <Link href={`/${useLocale()}/login`}>{t('loginLink')}</Link>
                     </Text>
                 </div>
             </Card>

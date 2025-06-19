@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { useLocale } from 'next-intl';
 import {
     Layout,
     Form,
@@ -131,10 +132,10 @@ const LoginPage = () => {
 
                 <div style={{ textAlign: 'center', marginTop: 16 }}>
                     <div>
-                        <Link href="/forgot-password">{t("forgotPasswordLink")}</Link>
+                        <Link href={`/${useLocale()}/forgot`}>{t("forgotPasswordLink")}</Link>
                     </div>
                     <Text type="secondary">
-                        {t('registerAccount')} <Link href="/en/register">{t("registerLink")}</Link>
+                        {t('registerAccount')} <Link href={`/${useLocale()}/register`}>{t("registerLink")}</Link>
                     </Text>
                 </div>
             </Card>

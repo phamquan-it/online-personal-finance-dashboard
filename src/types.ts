@@ -122,6 +122,7 @@ interface UserProfile {
     lastName: string;
     email: string;
     userName: string;
+    avatarUrl?: string
 }
 
 interface RegisterRequest {
