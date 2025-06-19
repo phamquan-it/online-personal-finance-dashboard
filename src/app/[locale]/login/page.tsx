@@ -10,6 +10,7 @@ import {
     Card,
     theme,
     Space,
+    message,
 } from 'antd';
 import {
     LockOutlined,
@@ -19,6 +20,9 @@ import {
 import { useRouter } from 'next/navigation';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
+import { useLoginMutation } from '@/libs/redux/services/authApi';
+
+// ✅ import the RTK Query hook
 
 const { Content } = Layout;
 const { Text } = Typography;
@@ -30,42 +34,35 @@ const LoginPage = () => {
 
     const [form] = Form.useForm();
     const router = useRouter();
-    const [isLoading, setIsLoading] = useState(false);
-
-    // Load translations for LoginPage from JSON
     const t = useTranslations('LoginPage');
+    const [messageApi, contextHolder] = message.useMessage()
 
-    const loginUser = async (credentials: { email: string; password: string }) => {
-        const res = await fetch('/api/login', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(credentials),
-        });
-
-        if (!res.ok) {
-            const error = await res.json();
-            throw new Error(error.message || 'Login failed');
-        }
-        return res.json();
-    };
+    // ✅ use RTK Query mutation
+    const [login, { isLoading }] = useLoginMutation();
 
     const onFinish = async (values: any) => {
-        setIsLoading(true);
         try {
-            const { accessToken } = await loginUser(values);
-            localStorage.setItem('token', accessToken);
-            console.log('Login success:', accessToken);
-            router.push('/');
+            // ✅ Call RTK Query mutation — map email -> userName
+            const result = await login({
+                userName: values.email,
+                password: values.password,
+            }).unwrap();
+
+            // ✅ Save token however you like
+            localStorage.setItem('token', result.token);
+            messageApi.success("Success!")
+            setTimeout(() => {
+                router.push('/');
+            }, 500)
         } catch (err: any) {
-            console.error('Login error:', err.message);
+            messageApi.error("Error!")
+            console.error('Login error:', err);
             form.setFields([
                 {
                     name: 'password',
                     errors: [t('errorLoginFailed')],
                 },
             ]);
-        } finally {
-            setIsLoading(false);
         }
     };
 
@@ -80,6 +77,7 @@ const LoginPage = () => {
                 padding: 24,
             }}
         >
+            {contextHolder}
             <Card
                 title={
                     <Space>
@@ -105,7 +103,7 @@ const LoginPage = () => {
                         label={t("emailLabel")}
                         rules={[
                             { required: true, message: t("errorRequiredEmail") },
-                            { type: 'email', message: t("errorInvalidEmail") },
+                            { type: 'string', message: t("errorInvalidEmail") },
                         ]}
                     >
                         <Input placeholder={t("emailPlaceholder")} prefix={<MailOutlined />} />

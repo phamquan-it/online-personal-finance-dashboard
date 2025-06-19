@@ -9,6 +9,7 @@ import { reportsApi } from './services/reportsApi'
 import { notificationsApi } from './services/notificationsApi'
 import { educationApi } from './services/educationApi'
 import { financeApi } from './services/financeApi'
+import { authApi } from './services/authApi'
 // ...
 
 export const store = configureStore({
@@ -23,6 +24,7 @@ export const store = configureStore({
         [notificationsApi.reducerPath]: notificationsApi.reducer,
         [educationApi.reducerPath]: educationApi.reducer,
         [financeApi.reducerPath]: financeApi.reducer,
+        [authApi.reducerPath]: authApi.reducer,
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat([
@@ -34,7 +36,8 @@ export const store = configureStore({
             reportsApi.middleware,
             notificationsApi.middleware,
             educationApi.middleware,
-            financeApi.middleware
+            financeApi.middleware,
+            authApi.middleware
         ]),
 })
 

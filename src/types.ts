@@ -116,4 +116,31 @@ interface ReportResponse {
 }
 
 
+interface UserProfile {
+    id: number;
+    firstName: string;
+    lastName: string;
+    email: string;
+    userName: string;
+}
+
+interface RegisterRequest {
+  firstName: string;
+  lastName: string;
+  phone: string;
+  email: string;
+  userName: string;
+  password: string;
+}
+
+interface RegisterResponse {
+  message: string;
+  user: {
+    id: number;
+    firstName: string;
+    lastName: string;
+    email: string;
+    userName: string;
+  };
+}
 
