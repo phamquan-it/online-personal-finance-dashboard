@@ -49,3 +49,10 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+#sider-income .ant-layout-sider-trigger{
+    text-align: left;
+    height: 50px;
+    padding-left: 5px;
+    font-size: 12px;
+}

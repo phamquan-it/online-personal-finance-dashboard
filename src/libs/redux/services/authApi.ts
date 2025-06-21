@@ -1,11 +1,7 @@
 // src/services/authApi.ts
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-
-// Define the base API
-export const authApi = createApi({
-    reducerPath: 'authApi',
-    baseQuery: fetchBaseQuery({
+export const baseQuery = fetchBaseQuery({
         baseUrl: 'https://personal-finance-dashboard.somee.com/api', // <-- update this
         prepareHeaders: (headers) => {
             const token = localStorage.getItem('token');
@@ -14,7 +10,11 @@ export const authApi = createApi({
             }
             return headers;
         },
-    }),
+    })
+// Define the base API
+export const authApi = createApi({
+    reducerPath: 'authApi',
+    baseQuery,
     endpoints: (builder) => ({
         // ✅ POST /api/Auth/login
         login: builder.mutation<{ token: string }, { userName: string; password: string }>({

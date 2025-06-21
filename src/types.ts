@@ -10,7 +10,6 @@ interface Category {
     key: string
     name: string
     description?: string
-    amount?: number
 }
 interface Debt {
     id?: string | number

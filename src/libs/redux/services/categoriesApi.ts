@@ -1,17 +1,18 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { baseQuery } from './authApi'
  
 export const categoriesApi = createApi({
   reducerPath: 'categoriesApi',
-  baseQuery: fetchBaseQuery({ baseUrl: '/api/' }),
+  baseQuery,
   tagTypes: ['Category'],
   endpoints: (builder) => ({
     getCategories: builder.query<Category[], void>({
-      query: () => 'categories',
+      query: () => 'ExpenseCategory',
       providesTags: ['Category'],
     }),
     addCategory: builder.mutation<Category, Partial<Category>>({
       query: (body) => ({
-        url: 'categories',
+        url: '/ExpenseCategory',
         method: 'POST',
         body,
       }),
@@ -19,7 +20,7 @@ export const categoriesApi = createApi({
     }),
     deleteCategory: builder.mutation<{ key: string }, string>({
       query: (key) => ({
-        url: `categories/${key}`,
+        url: `ExpenseCategory/${key}`,
         method: 'DELETE',
       }),
       invalidatesTags: ['Category'],
