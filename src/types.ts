@@ -7,6 +7,7 @@ interface Budget {
 }
 
 interface Category {
+    id?: number;
     key: string
     name: string
     description?: string
@@ -43,6 +44,18 @@ interface Tool {
 }
 interface ForgotPasswordFormValues {
     email: string;
+}
+
+
+interface Goal {
+    id: number;
+    title: string;
+    description: string;
+    targetAmount: number;
+    currentAmount: number;
+    targetDate: string; // or Date, depending on how you handle it
+    goalType: 'savings' | 'investment' | string; // adjust if you have fixed types
+    isCompleted: boolean;
 }
 
 interface GoalFormValues {
@@ -125,22 +138,31 @@ interface UserProfile {
 }
 
 interface RegisterRequest {
-  firstName: string;
-  lastName: string;
-  phone: string;
-  email: string;
-  userName: string;
-  password: string;
+    firstName: string;
+    lastName: string;
+    phone: string;
+    email: string;
+    userName: string;
+    password: string;
 }
 
 interface RegisterResponse {
-  message: string;
-  user: {
+    message: string;
+    user: {
+        id: number;
+        firstName: string;
+        lastName: string;
+        email: string;
+        userName: string;
+    };
+}
+interface Contribution {
     id: number;
-    firstName: string;
-    lastName: string;
-    email: string;
-    userName: string;
-  };
+    savingId: number;
+    amount: number;
+    contributionDate: string; // ISO
+    note: string;
+    createdAt: string;
+    updatedAt: string | null;
 }
 
