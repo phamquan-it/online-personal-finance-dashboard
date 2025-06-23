@@ -2,7 +2,7 @@
 
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const baseQuery = fetchBaseQuery({
-        baseUrl: 'https://personal-finance-dashboard.somee.com/api/', // <-- update this
+        baseUrl: 'http://localhost:5240/api/', // <-- update this
         prepareHeaders: (headers) => {
             const token = localStorage.getItem('token');
             if (token) {

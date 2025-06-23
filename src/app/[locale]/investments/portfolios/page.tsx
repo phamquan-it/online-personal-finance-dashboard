@@ -27,7 +27,6 @@ import {
     ResponsiveContainer,
 } from 'recharts'
 import { PlusOutlined, MoreOutlined } from '@ant-design/icons'
-import { useGetInvestmentsQuery } from '@/libs/redux/services/investmentApi'
 import { useTranslations, useLocale } from 'next-intl'
 
 const { Content } = Layout
@@ -38,7 +37,6 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AA46BE']
 
 const InvestmentsPage = () => {
     const [messageApi, contextHolder] = message.useMessage()
-    const { data = [], isLoading } = useGetInvestmentsQuery([])
     const [localData, setLocalData] = useState<any[]>([])
     const [form] = Form.useForm()
     const [modalForm] = Form.useForm()
@@ -51,7 +49,7 @@ const InvestmentsPage = () => {
     const locale = useLocale()
     const t = useTranslations('InvestmentsPage')
 
-    const allInvestments = [...data, ...localData]
+    const allInvestments = [ ...localData]
 
     const totalAmount = useMemo(
         () => allInvestments.reduce((acc, inv) => acc + inv.amount, 0),
@@ -151,7 +149,7 @@ const InvestmentsPage = () => {
             <Row gutter={24} style={{ marginTop: 24 }}>
                 <Col xs={24} md={12}>
                     <Card title={t('totalPortfolio')}>
-                        {isLoading ? (
+                        {false ? (
                             <Skeleton active paragraph={{ rows: 5 }} />
                         ) : (
                             <>
@@ -263,7 +261,7 @@ const InvestmentsPage = () => {
                     columns={columns}
                     rowKey="id"
                     pagination={{ pageSize: 5 }}
-                    loading={isLoading}
+                    loading={false}
                 />
             </Card>
             <Modal

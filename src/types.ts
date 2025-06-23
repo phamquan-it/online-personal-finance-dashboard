@@ -1,9 +1,13 @@
 interface Budget {
-    id: string
-    category: string
-    amount: number
-    spent: number
-    frequency: 'daily' | 'weekly' | 'monthly' | 'yearly'
+    category: string;
+    id: number;
+    categoryId: number;
+    budgetType: 'monthly' | 'yearly'; // adjust if you have other types
+    amount: number;
+    startDate: string; // ISO date string
+    endDate: string;   // ISO date string
+    alertThreshold: number;
+    totalExpense: number;
 }
 
 interface Category {
@@ -11,17 +15,6 @@ interface Category {
     key: string
     name: string
     description?: string
-}
-interface Debt {
-    id?: string | number
-    key: string
-    type: string
-    name: string
-    total: number
-    paid: number
-    monthlyPayment: number
-    dueDate: string
-    startDate?: string
 }
 
 interface Tip {
@@ -72,8 +65,40 @@ interface InvestmentFormValues {
     returnRate: number
 }
 
-interface Investment extends InvestmentFormValues {
-    id: string
+// src/types/investment.ts
+
+interface Investment {
+    id: number;
+    portfolioId: number;
+    name: string;
+    assetType: string; // You can make this a union: 'stock' | 'crypto' | 'real_estate' etc.
+    quantity: number;
+    purchasePrice: number;
+    currentPrice: number;
+    purchaseDate: string; // ISO date string
+    createdAt: string;
+    updatedAt: string | null;
+    investmentPriceHistories: InvestmentPriceHistory[];
+    portfolio: any | null; // You can type this if you have a Portfolio interface
+}
+
+interface InvestmentPriceHistory {
+    id: number;
+    investmentId: number;
+    recordedDate: string; // ISO date string
+    price: number;
+    createdAt: string;
+    updatedAt: string | null;
+}
+
+interface CreateInvestmentRequest {
+    portfolioId: number;
+    name: string;
+    assetType: string;
+    quantity: number;
+    purchasePrice: number;
+    currentPrice: number;
+    purchaseDate: string; // ISO date
 }
 
 interface LoginFormValues {
@@ -165,4 +190,75 @@ interface Contribution {
     createdAt: string;
     updatedAt: string | null;
 }
+interface AddInvestmentPriceHistoryRequest {
+    investmentId: number;
+    recordedDate: string;
+    price: number;
+}
 
+interface AddInvestmentPriceHistoryResponse {
+    message: string;
+    data: Investment;
+}
+
+// src/types/investment.ts
+interface InvestmentDetail {
+    portfolioId: number;
+    name: string;
+    assetType: string;
+    totalInvested: number;
+    currentValue: number;
+    performance: number;
+    purchaseDate: string;
+    priceHistory: InvestmentPriceHistory[];
+}
+interface CreatePortfolioRequest {
+    name: string;
+    description: string;
+}
+
+interface Portfolio {
+    id: number;
+    userId: number;
+    name: string;
+    description: string;
+    createdAt: string;
+    updatedAt: string | null;
+    user?: any; // optional, if you have a User type you can replace this
+}
+
+interface Debt {
+    id: number;
+    userId: number;
+    debtName: string;
+    debtType: string;
+    totalAmount: number;
+    remainingAmount: number;
+    interestRate: number;
+    minimumPayment: number;
+    paymentFrequency: string;
+    dueDate: string;
+    isCompleted: boolean;
+}
+
+interface CreateDebtRequest {
+    debtName: string;
+    debtType: string;
+    totalAmount: number;
+    remainingAmount: number;
+    interestRate: number;
+    minimumPayment: number;
+    paymentFrequency: string;
+    dueDate: string;
+}
+interface MonthlySummary {
+    year: number;
+    month: number;
+    totalIncome: number;
+    totalExpense: number;
+    balance: number;
+    totalSavings: number;
+    investmentGainLoss: number;
+    investmentPercentChange: string;
+    incomeTax: number;
+}

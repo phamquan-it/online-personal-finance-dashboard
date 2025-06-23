@@ -28,6 +28,7 @@ import {
     useGetSavingsGoalsQuery,
     useGetDebtInfoQuery,
 } from '@/libs/redux/services/financeApi'
+import { useGetMonthlySummaryQuery } from '@/libs/redux/services/statisticsApi'
 import { useTranslations } from 'next-intl'
 
 const { Content } = Layout
@@ -63,6 +64,12 @@ const DashboardHomePage = () => {
         isLoading: loadingDebt,
     } = useGetDebtInfoQuery()
 
+    // NEW: Monthly Summary
+    const {
+        data: monthlySummary,
+        isLoading: loadingMonthlySummary,
+    } = useGetMonthlySummaryQuery()
+
     return (
         <Content style={{ padding: 24 }}>
             <Title level={2}>{t('title')}</Title>
@@ -70,10 +77,10 @@ const DashboardHomePage = () => {
 
             <Divider />
 
-            {/* Tổng quan tài chính */}
+            {/* Tổng quan tháng hiện tại */}
             <Row gutter={[16, 16]}>
-                {loadingOverview ? (
-                    Array.from({ length: 4 }).map((_, i) => (
+                {loadingMonthlySummary ? (
+                    Array.from({ length: 5 }).map((_, i) => (
                         <Col xs={24} md={6} key={i}>
                             <Card>
                                 <Skeleton active paragraph={{ rows: 1 }} />
@@ -86,7 +93,7 @@ const DashboardHomePage = () => {
                             <Card>
                                 <Statistic
                                     title={t('cards.totalIncome')}
-                                    value={financialOverview?.totalIncome}
+                                    value={monthlySummary?.totalIncome}
                                     prefix={<DollarOutlined />}
                                     suffix={t('currency')}
                                     valueStyle={{ color: '#52c41a', fontSize: 20 }}
@@ -97,7 +104,7 @@ const DashboardHomePage = () => {
                             <Card>
                                 <Statistic
                                     title={t('cards.totalExpense')}
-                                    value={financialOverview?.totalExpense}
+                                    value={monthlySummary?.totalExpense}
                                     prefix={<DollarOutlined />}
                                     suffix={t('currency')}
                                     valueStyle={{ color: '#ff4d4f' }}
@@ -107,10 +114,10 @@ const DashboardHomePage = () => {
                         <Col xs={24} md={6}>
                             <Card>
                                 <Statistic
-                                    title={t('cards.savingsRate')}
-                                    value={financialOverview?.savingsRate}
-                                    suffix="%"
-                                    prefix={<FundOutlined />}
+                                    title={('cards.balance')}
+                                    value={monthlySummary?.balance}
+                                    prefix={<BankOutlined />}
+                                    suffix={t('currency')}
                                     valueStyle={{ color: '#1890ff' }}
                                 />
                             </Card>
@@ -118,9 +125,9 @@ const DashboardHomePage = () => {
                         <Col xs={24} md={6}>
                             <Card>
                                 <Statistic
-                                    title={t('cards.investmentAssets')}
-                                    value={financialOverview?.investmentAssets}
-                                    prefix={<RiseOutlined />}
+                                    title={('cards.incomeTax')}
+                                    value={monthlySummary?.incomeTax}
+                                    prefix={<DollarOutlined />}
                                     suffix={t('currency')}
                                     valueStyle={{ color: '#722ed1' }}
                                 />
