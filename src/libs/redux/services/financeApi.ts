@@ -1,8 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { baseQuery } from './authApi'
 
 export const financeApi = createApi({
     reducerPath: 'financeApi',
-    baseQuery: fetchBaseQuery({ baseUrl: '/api/' }),
+    baseQuery,
     endpoints: (builder) => ({
         getFinancialOverview: builder.query<{
             totalIncome: number
@@ -18,25 +19,33 @@ export const financeApi = createApi({
         >({
             query: () => 'spending-distribution',
         }),
-        getBudgetProgress: builder.query<
-            Array<{ label: string; value: number; budget: number }>,
-            void
-        >({
-            query: () => 'budget-progress',
+        getBudgetProgress: builder.query<BudgetProgress[], void>({
+            query: () => 'Budget/progress-by-category',
+            transformResponse: (response: RawBudgetProgress[]): BudgetProgress[] =>
+                response.map(item => ({
+                    label: item.categoryName,
+                    value: item.totalSpent,
+                    budget: item.budgetedAmount,
+                })),
         }),
         getSavingsGoals: builder.query<
-            Array<{ name: string; current: number; target: number }>,
+            Array<Goal>,
             void
         >({
-            query: () => 'savings-goals',
+            query: () => 'Saving/goals', // Match the backend route exactly
         }),
-        getDebtInfo: builder.query<{
-            remainingDebt: number
-            repaymentProgress: number
-            repaymentPlan: string
+
+
+        getDebtSummary: builder.query<{
+            remainingDebt: number;
+            totalDebt: number;
+            totalPaid: number;
+            repaymentProgress: number;
+            repaymentPlan: string;
         }, void>({
-            query: () => 'debt-info',
+            query: () => 'Debt/summary',
         }),
+
     }),
 })
 
@@ -45,5 +54,5 @@ export const {
     useGetSpendingDistributionQuery,
     useGetBudgetProgressQuery,
     useGetSavingsGoalsQuery,
-    useGetDebtInfoQuery,
+    useGetDebtSummaryQuery,
 } = financeApi

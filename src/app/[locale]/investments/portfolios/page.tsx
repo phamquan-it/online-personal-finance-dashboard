@@ -28,6 +28,9 @@ import {
 } from 'recharts'
 import { PlusOutlined, MoreOutlined } from '@ant-design/icons'
 import { useTranslations, useLocale } from 'next-intl'
+import CreatePortfolioForm from '@/components/investment/CreatePortfolioForm'
+import CreatePortfolioModal from '@/components/investment/CreatePortfolioModal'
+import { useGetAssetAllocationQuery, useGetInvestmentPortfoliosQuery } from '@/libs/redux/services/investmentApi'
 
 const { Content } = Layout
 const { Title, Text } = Typography
@@ -38,6 +41,8 @@ const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AA46BE']
 const InvestmentsPage = () => {
     const [messageApi, contextHolder] = message.useMessage()
     const [localData, setLocalData] = useState<any[]>([])
+    const { data, error, isFetching } = useGetInvestmentPortfoliosQuery();
+    const { data: investmentsPie, isLoading  } = useGetAssetAllocationQuery()
     const [form] = Form.useForm()
     const [modalForm] = Form.useForm()
 
@@ -49,7 +54,7 @@ const InvestmentsPage = () => {
     const locale = useLocale()
     const t = useTranslations('InvestmentsPage')
 
-    const allInvestments = [ ...localData]
+    const allInvestments = [...localData]
 
     const totalAmount = useMemo(
         () => allInvestments.reduce((acc, inv) => acc + inv.amount, 0),
@@ -137,7 +142,10 @@ const InvestmentsPage = () => {
             ),
         },
     ]
-
+    const options = data?.map(item => ({
+        label: item.name,
+        value: item.id
+    })) || [];
     return (
         <Content style={{ padding: 24 }}>
             {contextHolder}
@@ -148,7 +156,9 @@ const InvestmentsPage = () => {
 
             <Row gutter={24} style={{ marginTop: 24 }}>
                 <Col xs={24} md={12}>
-                    <Card title={t('totalPortfolio')}>
+                    <Card title={t('totalPortfolio')} extra={(
+                        <CreatePortfolioModal />
+                    )}>
                         {false ? (
                             <Skeleton active paragraph={{ rows: 5 }} />
                         ) : (
@@ -160,7 +170,7 @@ const InvestmentsPage = () => {
                                     <ResponsiveContainer>
                                         <PieChart>
                                             <Pie
-                                                data={assetAllocation}
+                                                data={investmentsPie}
                                                 dataKey="value"
                                                 nameKey="name"
                                                 cx="50%"
@@ -203,13 +213,7 @@ const InvestmentsPage = () => {
                                 label={t('investmentType')}
                                 rules={[{ required: true, message: t('placeholderType') }]}
                             >
-                                <Select placeholder={t('placeholderType')}>
-                                    <Option value="Stock">{t('investmentStock')}</Option>
-                                    <Option value="Bond">{t('investmentBond')}</Option>
-                                    <Option value="Real Estate">{t('investmentRealEstate')}</Option>
-                                    <Option value="Crypto">{t('investmentCrypto')}</Option>
-                                    <Option value="Other">{t('investmentOther')}</Option>
-                                </Select>
+                                <Select placeholder={t('placeholderType')} options={options} loading={isFetching} />
                             </Form.Item>
 
                             <Row gutter={16}>
@@ -220,8 +224,8 @@ const InvestmentsPage = () => {
                                         rules={[{ required: true, message: t('placeholderAmount') }]}
                                     >
                                         <InputNumber
-                                            min={100000}
-                                            step={100000}
+                                            min={1000}
+                                            step={1000}
                                             style={{ width: '100%' }}
                                             formatter={(val) => `${Number(val).toLocaleString()} VND`}
                                             parser={(val: any) => Number(val?.replace(/[^\d]/g, ''))}
@@ -345,7 +349,6 @@ const InvestmentsPage = () => {
                         },
                     ]} />
             </Modal>
-
 
         </Content>
     )

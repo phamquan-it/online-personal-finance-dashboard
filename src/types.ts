@@ -14,7 +14,8 @@ interface Category {
     id?: number;
     key: string
     name: string
-    description?: string
+    description?: string,
+    expensePercentage?: number,
 }
 
 interface Tip {
@@ -106,20 +107,14 @@ interface LoginFormValues {
     password: string;
 }
 
-type NotificationType =
-    | "budget_exceeded"
-    | "bill_due"
-    | "upcoming_payment"
-    | "investment_change"
-    | "savings_opportunity";
-
+// types/notification.ts
 interface Notification {
-    id: string;
-    ntitle: string;
-    description: string;
-    time: string;
-    type: NotificationType;
-    read?: boolean;
+  id: number;
+  userId: number;
+  type: string;
+  message: string;
+  isRead: boolean;
+  createdAt: string;
 }
 
 
@@ -261,4 +256,40 @@ interface MonthlySummary {
     investmentGainLoss: number;
     investmentPercentChange: string;
     incomeTax: number;
+}
+
+interface InvestmentPortfolio {
+    id: number;
+    userId: number;
+    name: string;
+    description: string;
+    createdAt: string;
+    updatedAt: string | null;
+    user: any | null;
+}
+
+interface CreateInvestmentPortfolioRequest {
+    name: string;
+    description: string;
+}
+
+interface IncomeTotal {
+    today: number;
+    month: number;
+    year: number;
+    all: number;
+}
+
+interface RawBudgetProgress {
+    categoryId: number
+    categoryName: string
+    budgetedAmount: number
+    totalSpent: number
+    progressPercentage: number
+}
+
+interface BudgetProgress {
+    label: string
+    value: number
+    budget: number
 }

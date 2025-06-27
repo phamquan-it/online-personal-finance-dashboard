@@ -13,6 +13,22 @@ export const investmentApi = createApi({
                 body: investment,
             }),
         }),
+        getInvestmentPortfolios: builder.query<InvestmentPortfolio[], void>({
+            query: () => 'InvestmentPortfolio',
+        }),
+        createInvestmentPortfolio: builder.mutation<InvestmentPortfolio, CreateInvestmentPortfolioRequest>({
+            query: (body) => ({
+                url: '/InvestmentPortfolio',
+                method: 'POST',
+                body,
+            }),
+        }),
+        getAssetAllocation: builder.query<
+            Array<{ name: string; value: number }>,
+            void
+        >({
+            query: () => 'InvestmentPortfolio/asset-allocation',
+        }),
         addInvestmentPriceHistory: builder.mutation<
             AddInvestmentPriceHistoryResponse,
             AddInvestmentPriceHistoryRequest
@@ -33,5 +49,10 @@ export const investmentApi = createApi({
     }),
 });
 
-export const { useCreateInvestmentMutation } = investmentApi;
+export const {
+    useCreateInvestmentMutation,
+    useCreateInvestmentPortfolioMutation,
+    useGetInvestmentPortfoliosQuery,
+    useGetAssetAllocationQuery
+} = investmentApi;
 

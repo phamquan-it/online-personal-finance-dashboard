@@ -26,6 +26,7 @@ import LocaleSwitcher from '../LocaleSwitcher';
 import IncomeForm from '../incomes/IncomeForm';
 import IncomeChart from '../incomes/IncomeChart';
 import IncomeTable from '../incomes/IncomeTable';
+import { useGetIncomeTotalQuery } from '@/libs/redux/services/incomeApi';
 
 const { Header, Sider, Content } = Layout;
 
@@ -38,6 +39,8 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({ children }) => {
     const pathname = usePathname();
     const router = useRouter();
     const [collapsed, setCollapsed] = useState(false);
+    const { data, error, isLoading } = useGetIncomeTotalQuery();
+
 
     const handleMenuClick = ({ key }: { key: string }) => {
         if (key === 'logout') {
@@ -157,7 +160,7 @@ const CommonLayout: React.FC<CommonLayoutProps> = ({ children }) => {
                         )}
                     >
                         <Button onClick={() => setIsInComeOpen(!isInComeOpen)}>
-                            Total income: ${totalIncome}
+                            Total income: ${data?.all ?? 0}
                         </Button>
                     </Dropdown>}
 

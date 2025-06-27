@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
     Layout,
     Typography,
@@ -24,12 +24,13 @@ import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recha
 import {
     useGetFinancialOverviewQuery,
     useGetSpendingDistributionQuery,
-    useGetBudgetProgressQuery,
     useGetSavingsGoalsQuery,
-    useGetDebtInfoQuery,
+    useGetBudgetProgressQuery,
+    useGetDebtSummaryQuery,
 } from '@/libs/redux/services/financeApi'
 import { useGetMonthlySummaryQuery } from '@/libs/redux/services/statisticsApi'
 import { useTranslations } from 'next-intl'
+import { useGetCategoriesQuery } from '@/libs/redux/services/categoriesApi'
 
 const { Content } = Layout
 const { Title, Text } = Typography
@@ -38,31 +39,30 @@ const COLORS = ['#1890ff', '#ff4d4f', '#ffc107', '#52c41a', '#722ed1']
 
 const DashboardHomePage = () => {
     const t = useTranslations('DashboardHomePage')
-
+    const { data: categories = [], isFetching } = useGetCategoriesQuery();
+    const { data: budgetProgress = [], isLoading: loadingBudget } = useGetBudgetProgressQuery()
     const {
         data: financialOverview,
         isLoading: loadingOverview,
     } = useGetFinancialOverviewQuery()
 
-    const {
-        data: spendingData = [],
-        isLoading: loadingSpending,
-    } = useGetSpendingDistributionQuery()
-
-    const {
-        data: budgetProgress = [],
-        isLoading: loadingBudget,
-    } = useGetBudgetProgressQuery()
+    const spendingData = categories.map((item) => ({
+        category: item.name,
+        value: item.expensePercentage,
+    }));
 
     const {
         data: savingsGoals = [],
         isLoading: loadingGoals,
     } = useGetSavingsGoalsQuery()
+    useEffect(() => {
+        console.log("sv", savingsGoals)
+    }, [savingsGoals])
 
     const {
         data: debtInfo,
         isLoading: loadingDebt,
-    } = useGetDebtInfoQuery()
+    } = useGetDebtSummaryQuery()
 
     // NEW: Monthly Summary
     const {
@@ -142,11 +142,11 @@ const DashboardHomePage = () => {
             {/* Biểu đồ phân bổ chi tiêu */}
             <Row gutter={[16, 16]}>
                 <Col xs={24} md={12}>
-                    <Card
+                    <Card className="h-full"
                         title={t('cards.spendingDistribution')}
                         extra={<PieChartOutlined />}
                     >
-                        {loadingSpending ? (
+                        {isFetching ? (
                             <Skeleton active paragraph={{ rows: 6 }} />
                         ) : (
                             <ResponsiveContainer width="100%" height={300}>
@@ -179,7 +179,7 @@ const DashboardHomePage = () => {
                 </Col>
 
                 <Col xs={24} md={12}>
-                    <Card
+                    <Card className="h-full"
                         title={t('cards.budgetProgress')}
                         extra={<BarChartOutlined />}
                     >
@@ -219,15 +219,15 @@ const DashboardHomePage = () => {
                             <Skeleton active paragraph={{ rows: 3 }} />
                         ) : (
                             savingsGoals.map((goal, idx) => {
-                                const progress = (goal.current / goal.target) * 100
+                                const progress = (goal.currentAmount / goal.targetAmount) * 100
                                 return (
                                     <div key={idx} style={{ marginBottom: 16 }}>
-                                        <Text>{goal.name}</Text>
+                                        <Text>{goal.title}</Text>
                                         <Progress
                                             percent={Math.round(progress)}
                                             status={progress >= 100 ? 'success' : 'active'}
                                             format={() =>
-                                                `${goal.current.toLocaleString()} / ${goal.target.toLocaleString()} ${t('currency')}`
+                                                `${t('currency')}`
                                             }
                                         />
                                     </div>
