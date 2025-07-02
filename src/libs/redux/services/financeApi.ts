@@ -32,7 +32,7 @@ export const financeApi = createApi({
             Array<Goal>,
             void
         >({
-            query: () => 'Saving/goals', // Match the backend route exactly
+            query: () => 'Saving/progress', // Match the backend route exactly
         }),
 
 

@@ -176,6 +176,9 @@ declare const messages: {
         "placeholderReturnRate": "Enter return rate (%)"
     },
     "DebtManagementPage": {
+        "interestRate": "Interest Rate",
+        "minimumPayment": "Minimum Payment",
+        "paymentFrequency": "Payment Frequency",
         "title": "Debt Management",
         "tabs": {
             "overview": "Overview",
@@ -232,25 +235,17 @@ declare const messages: {
     },
     "NotificationsAlertsPage": {
         "title": "Notifications & Alerts",
-        "notificationsTitle": "Notifications List",
-        "noNotificationsMessage": "No notifications",
-        "clearReadButton": "Clear Read",
+        "notificationsTitle": "Recent Notifications",
         "settingsTitle": "Notification Settings",
-        "toggleSuccess": "{action} notifications for {type}",
-        "notificationTypes": {
-            "budget_exceeded": "Budget Exceeded",
-            "bill_due": "Bill Due",
-            "upcoming_payment": "Upcoming Payment",
-            "investment_change": "Investment Change",
-            "savings_opportunity": "Savings Opportunity"
-        },
-        "icons": {
-            "budget_exceeded": "🚨",
-            "bill_due": "📅",
-            "upcoming_payment": "💰",
-            "investment_change": "📈",
-            "savings_opportunity": "🎯"
-        }
+        "refresh": "Refresh",
+        "filterAll": "All",
+        "filterUnread": "Unread",
+        "filterRead": "Read",
+        "noNotificationsMessage": "You have no notifications.",
+        "markAsReadButton": "Mark as Read",
+        "markAsReadSuccess": "Notification marked as read.",
+        "markAsReadFailed": "Failed to mark as read.",
+        "toggleSuccess": "{{action}} notifications for {{type}}"
     },
     "EducationPage": {
         "title": "Daily Smart Finance",

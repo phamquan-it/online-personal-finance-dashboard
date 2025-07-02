@@ -2,7 +2,7 @@ interface Budget {
     category: string;
     id: number;
     categoryId: number;
-    budgetType: 'monthly' | 'yearly'; // adjust if you have other types
+    budgetType: 'monthly' | 'yearly' | 'annual'; // adjust if you have other types
     amount: number;
     startDate: string; // ISO date string
     endDate: string;   // ISO date string
@@ -109,12 +109,12 @@ interface LoginFormValues {
 
 // types/notification.ts
 interface Notification {
-  id: number;
-  userId: number;
-  type: string;
-  message: string;
-  isRead: boolean;
-  createdAt: string;
+    id: number;
+    userId: number;
+    type: string;
+    message: string;
+    isRead: boolean;
+    createdAt: string;
 }
 
 
@@ -293,3 +293,45 @@ interface BudgetProgress {
     value: number
     budget: number
 }
+
+
+// src/features/api/types.ts
+interface InvestmentPortfolio {
+    id: number
+    name: string
+    totalInvested: number
+    currentValue: number
+    performance: number
+    investmentCount: number
+}
+
+interface CreateInvestmentPortfolioDto {
+    name: string
+    description?: string
+}
+
+interface UpdateInvestmentPortfolioDto {
+    name?: string
+    description?: string
+}
+
+interface InvestmentPortfolioPerformanceDto {
+    portfolioId: number
+    totalInvested: number
+    currentValue: number
+    performance: number
+}
+
+interface InvestmentDto {
+    id: number
+    name: string
+    purchasePrice: number
+    currentPrice: number
+    quantity: number
+}
+
+interface InvestmentPortfolioPerformanceResponse {
+    portfolioPerformance: InvestmentPortfolioPerformanceDto
+    investments: InvestmentDto[]
+}
+

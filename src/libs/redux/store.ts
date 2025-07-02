@@ -12,6 +12,7 @@ import { authApi } from "./services/authApi";
 import { incomeApi } from "./services/incomeApi";
 import { investmentApi } from "./services/investmentApi";
 import { statisticsApi } from "./services/statisticsApi";
+import { investmentPortfolioApi } from "./services/investmentPortfolioApi";
 // ...
 
 export const store = configureStore({
@@ -29,6 +30,7 @@ export const store = configureStore({
         [financeApi.reducerPath]: financeApi.reducer,
         [authApi.reducerPath]: authApi.reducer,
         [incomeApi.reducerPath]: incomeApi.reducer,
+        [investmentPortfolioApi.reducerPath]: investmentPortfolioApi.reducer
     },
     middleware: (getDefaultMiddleware) =>
         getDefaultMiddleware().concat([
@@ -43,7 +45,8 @@ export const store = configureStore({
             authApi.middleware,
             statisticsApi.middleware,
             investmentApi.middleware,
-            incomeApi.middleware
+            incomeApi.middleware,
+            investmentPortfolioApi.middleware
         ]),
 });
 
