@@ -24,7 +24,7 @@ type NotificationType =
     | 'investment_change'
     | 'savings_opportunity';
 
-interface Notification {
+export interface Notification {
     id: number;
     type: NotificationType;
     message: string;

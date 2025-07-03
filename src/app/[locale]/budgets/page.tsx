@@ -129,7 +129,7 @@ const BudgetPage: React.FC = () => {
             <Row gutter={[16, 16]}>
                 {budgets.map((budget) => (
                     <Col key={budget.id} xs={24} sm={12} md={8}>
-                        <BudgetCard
+                        <BudgetCard key={budget.id}
                             budget={budget}
                             onEdit={handleEdit}
                             onDelete={handleDelete}

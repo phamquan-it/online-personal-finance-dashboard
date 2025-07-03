@@ -1,16 +1,19 @@
-// ========================
-// ✅ Frontend: notificationsApi.ts (RTK Query)
-// ========================
-
+// libs/redux/services/notificationsApi.ts
 import { createApi } from '@reduxjs/toolkit/query/react'
 import { baseQuery } from './authApi'
+export type NotificationType =
+    | 'budget_exceeded'
+    | 'bill_due'
+    | 'upcoming_payment'
+    | 'investment_change'
+    | 'savings_opportunity'
 
 export interface Notification {
-    id: number;
-    type: string;
-    message: string;
-    isRead: boolean;
-    createdAt: string;
+    id: number
+    type: NotificationType
+    message: string
+    createdAt: string
+    isRead: boolean
 }
 
 export const notificationsApi = createApi({
@@ -18,35 +21,36 @@ export const notificationsApi = createApi({
     baseQuery,
     tagTypes: ['Notification'],
     endpoints: (builder) => ({
-        getNotifications: builder.query<Notification[], { type?: string[]; isRead?: boolean } | void>({
+        getNotifications: builder.query<Notification[], { type?: NotificationType[]; isRead?: boolean } | void>({
             query: (params) => {
-                const queryParts: string[] = []
-                if (params?.type) {
+                const searchParams = new URLSearchParams()
+                if (params?.type?.length) {
                     for (const t of params.type) {
-                        queryParts.push(`type=${encodeURIComponent(t)}`)
+                        searchParams.append('type', t)
                     }
                 }
                 if (params?.isRead !== undefined) {
-                    queryParts.push(`isRead=${params.isRead}`)
+                    searchParams.append('isRead', String(params.isRead))
                 }
-                const queryStr = queryParts.length > 0 ? `?${queryParts.join('&')}` : ''
-                return `notification${queryStr}`
+
+                return {
+                    url: `/api/Notification`,
+                    method: 'GET',
+                    params: searchParams,
+                }
             },
             providesTags: (result) =>
                 result
-                    ? [
-                          ...result.map(({ id }) => ({ type: 'Notification' as const, id })),
-                          { type: 'Notification', id: 'LIST' },
-                      ]
+                    ? [...result.map(({ id }) => ({ type: 'Notification' as const, id })), { type: 'Notification', id: 'LIST' }]
                     : [{ type: 'Notification', id: 'LIST' }],
         }),
 
         markNotificationAsRead: builder.mutation<void, number>({
             query: (id) => ({
-                url: `notification/${id}/read`,
+                url: `/api/Notification/${id}/mark-as-read`,
                 method: 'PATCH',
             }),
-            invalidatesTags: (result, error, id) => [
+            invalidatesTags: (_result, _error, id) => [
                 { type: 'Notification', id },
                 { type: 'Notification', id: 'LIST' },
             ],
@@ -57,5 +61,5 @@ export const notificationsApi = createApi({
 export const {
     useGetNotificationsQuery,
     useMarkNotificationAsReadMutation,
-} = notificationsApi;
+} = notificationsApi
 

@@ -3,9 +3,9 @@ import { Row, Col, Card, Skeleton, Statistic } from 'antd'
 import { DollarOutlined, BankOutlined } from '@ant-design/icons'
 
 function formatCompactVND(value: number): string {
-    if (value >= 1_000_000_000) return (value / 1_000_000_000).toFixed(2).replace(/\.00$/, '') + ' tỷ';
-    if (value >= 1_000_000) return (value / 1_000_000).toFixed(2).replace(/\.00$/, '') + ' triệu';
-    if (value >= 1_000) return (value / 1_000).toFixed(2).replace(/\.00$/, '') + ' nghìn';
+    if (value >= 1_000_000_000) return (value / 1_000_000_000).toFixed(2).replace(/\.00$/, '') + 'B';
+    if (value >= 1_000_000) return (value / 1_000_000).toFixed(2).replace(/\.00$/, '') + 'M';
+    if (value >= 1_000) return (value / 1_000).toFixed(2).replace(/\.00$/, '') + 'K';
     return value.toString();
 }
 
@@ -27,7 +27,7 @@ export default function MonthlySummaryCards({ data, loading }: { data: any, load
             <Col xs={24} md={6}>
                 <Card>
                     <Statistic
-                        title="Tổng thu nhập"
+                        title="Total Income"
                         prefix={<DollarOutlined />}
                         value={data?.totalIncome ?? 0}
                         valueStyle={{ color: '#52c41a' }}
@@ -38,7 +38,7 @@ export default function MonthlySummaryCards({ data, loading }: { data: any, load
             <Col xs={24} md={6}>
                 <Card>
                     <Statistic
-                        title="Tổng chi tiêu"
+                        title="Total Expenses"
                         prefix={<DollarOutlined />}
                         value={data?.totalExpense ?? 0}
                         valueStyle={{ color: '#ff4d4f' }}
@@ -49,7 +49,7 @@ export default function MonthlySummaryCards({ data, loading }: { data: any, load
             <Col xs={24} md={6}>
                 <Card>
                     <Statistic
-                        title="Số dư"
+                        title="Balance"
                         prefix={<BankOutlined />}
                         value={data?.balance ?? 0}
                         valueStyle={{ color: '#1890ff' }}
@@ -60,7 +60,7 @@ export default function MonthlySummaryCards({ data, loading }: { data: any, load
             <Col xs={24} md={6}>
                 <Card>
                     <Statistic
-                        title="Thuế thu nhập"
+                        title="Income Tax"
                         prefix={<DollarOutlined />}
                         value={data?.incomeTax ?? 0}
                         valueStyle={{ color: '#722ed1' }}

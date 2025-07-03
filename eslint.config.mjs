@@ -15,7 +15,7 @@ const eslintConfig = [
         // Add your custom rule overrides here
         rules: {
             "@typescript-eslint/no-explicit-any": "off",
-            "@typescript-eslint/no-unused-vars": "off"
+            "@typescript-eslint/no-unused-vars": "off",
         }
     }
 

@@ -7,10 +7,9 @@ import { useTranslations } from 'next-intl'
 
 interface Props {
     data: Datum[]
-    token: any
 }
 
-export default function IncomeLineChart({ data, token }: Props) 
+export default function IncomeLineChart({ data,  }: Props) 
 {
 
     const t = useTranslations("ReportsPage")
@@ -22,7 +21,7 @@ export default function IncomeLineChart({ data, token }: Props)
                 yField="income"
                 height={250}
                 point={{ size: 5, shape: 'diamond' }}
-                color={token.colorPrimary}
+                color={"blue"}
                 tooltip={{
                     formatter: (datum: Datum) => ({
                         name: t("tooltipIncome"),

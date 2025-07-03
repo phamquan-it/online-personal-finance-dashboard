@@ -22,13 +22,13 @@ const BudgetCard: React.FC<Props> = ({ budget, onEdit, onDelete }) => {
                 title={<Title level={5}>{budget.category}</Title>}
                 actions={
                     [
-                        <span onClick={() => setExpenseModalOpen(true)}>
+                        <span key={1} onClick={() => setExpenseModalOpen(true)}>
                             <PlusCircleOutlined /> Add Expense
                         </span>,
-                        <span onClick={() => onEdit(budget)}>
+                        <span key={2} onClick={() => onEdit(budget)}>
                             <EditOutlined /> Edit
                         </span>,
-                        <span onClick={() => onDelete(budget.id)}>
+                        <span key={3} onClick={() => onDelete(budget.id)}>
                             <DeleteOutlined /> Delete
                         </span>,
                     ]}

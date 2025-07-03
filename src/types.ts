@@ -67,21 +67,19 @@ interface InvestmentFormValues {
 }
 
 // src/types/investment.ts
-
 interface Investment {
-    id: number;
-    portfolioId: number;
-    name: string;
-    assetType: string; // You can make this a union: 'stock' | 'crypto' | 'real_estate' etc.
-    quantity: number;
-    purchasePrice: number;
-    currentPrice: number;
-    purchaseDate: string; // ISO date string
-    createdAt: string;
-    updatedAt: string | null;
-    investmentPriceHistories: InvestmentPriceHistory[];
-    portfolio: any | null; // You can type this if you have a Portfolio interface
+    id: number
+    portfolioId: number
+    name: string
+    assetType: 'stock' | 'bond' | 'real_estate' | 'crypto' | 'mutual_fund' | 'etf' | 'other'
+    quantity: number
+    purchasePrice: number
+    currentPrice: number
+    purchaseDate: string //
+    createdAt?: string
+    updatedAt?: string
 }
+
 
 interface InvestmentPriceHistory {
     id: number;
@@ -105,16 +103,6 @@ interface CreateInvestmentRequest {
 interface LoginFormValues {
     email: string;
     password: string;
-}
-
-// types/notification.ts
-interface Notification {
-    id: number;
-    userId: number;
-    type: string;
-    message: string;
-    isRead: boolean;
-    createdAt: string;
 }
 
 
@@ -323,6 +311,8 @@ interface InvestmentPortfolioPerformanceDto {
 }
 
 interface InvestmentDto {
+    amount: number;
+    type: any;
     id: number
     name: string
     purchasePrice: number

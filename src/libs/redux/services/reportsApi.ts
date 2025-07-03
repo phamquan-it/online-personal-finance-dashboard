@@ -1,18 +1,18 @@
 // lib/reportsApi.ts
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { baseQuery } from "./authApi";
 
 export const reportsApi = createApi({
-    reducerPath: 'reportsApi',
-    baseQuery: fetchBaseQuery({ baseUrl: '/api/' }),
+    reducerPath: "reportsApi",
+    baseQuery,
     endpoints: (builder) => ({
-        getReports: builder.query<{
-            incomeData: { date: string; income: number }[],
-            expenseData: { category: string; value: number }[]
-        }, void>({
-            query: () => 'reports',
+        getIncomeHistory: builder.query<
+            Array<{ date: string; income: number }>,
+            void
+        >({
+            query: () => "Income/income-history",
         }),
     }),
-})
+});
 
-export const { useGetReportsQuery } = reportsApi
-
+export const { useGetIncomeHistoryQuery } = reportsApi;

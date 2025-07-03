@@ -47,10 +47,7 @@ export default function NotificationsAlertsPage() {
     const [readFilter, setReadFilter] = useState<'all' | 'read' | 'unread'>('all')
 
     const activeTypes = useMemo(
-        () =>
-            Object.entries(typeFilters)
-                .filter(([, enabled]) => enabled)
-                .map(([type]) => type as NotificationType),
+        () => Object.entries(typeFilters).filter(([, enabled]) => enabled).map(([type]) => type as NotificationType),
         [typeFilters]
     )
 
@@ -71,13 +68,13 @@ export default function NotificationsAlertsPage() {
         messageApi.success(
             `${value ? 'Bật' : 'Tắt'} thông báo loại ${getTagByType(type).props.children || type} thành công`
         )
-
     }
 
     const handleMarkAsRead = async (id: number) => {
         try {
             await markNotificationAsRead(id).unwrap()
             messageApi.success(t('markAsReadSuccess'))
+            refetch()
         } catch {
             messageApi.error(t('markAsReadFailed'))
         }
@@ -122,13 +119,7 @@ export default function NotificationsAlertsPage() {
                         style={{ borderRadius: token.borderRadiusLG }}
                     >
                         <NotificationList
-                            notifications={[{
-                                id: 0,
-                                type: 'budget_exceeded',
-                                message: '',
-                                createdAt: '',
-                                isRead: false
-                            }]}
+                            notifications={notifications}
                             loading={isLoading}
                             onMarkAsRead={handleMarkAsRead}
                         />
